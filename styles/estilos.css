@@ -1,0 +1,21 @@
+.contenedor-logo {
+    /*background-color: blue;*/
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    padding: 10px;
+    width: 400px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    background-color:brown;
+}
+
+.boton1 {
+    padding: 15px;
+    margin: 5px;
+}

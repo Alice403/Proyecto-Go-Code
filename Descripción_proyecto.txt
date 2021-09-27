@@ -1,1 +1,0 @@
-Descripción del proyecto: Se creará una página para llevar el control de las ventas físicas y virtuales de una empresa de manufactura y hacerles seguimiento.
