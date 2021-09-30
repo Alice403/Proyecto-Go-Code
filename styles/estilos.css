@@ -4,6 +4,7 @@
 
 body {
     margin: 0px;
+    background-color: rgb(190, 245, 227);
   }
 
 ul {
@@ -12,14 +13,17 @@ ul {
     list-style: none;
 }
 
+button{
+    font-family: unset;
+}
 
 /*Header*/
-.header{
+.encabezado{
     display:flex;
     justify-content:space-evenly;
 }
 
-.header > li{
+.encabezado > li{
     display: flex;
     align-items: center;
 }
@@ -40,46 +44,92 @@ ul {
 }
 
 /*Cuerpo*/
-.cuerpo > button,*{
+.cuerpo{
     font-family: 'Raleway';
+    display:contents;
+    justify-content: space-between;
 }
 
-.contenedorBoton{
-    float: right;
-    padding-right: 3.5em;
-    padding-bottom: 2em;
+.cuerpo > li{
+    display: grid;
+}
+
+.contenedorBotonAgregar{
+    /*background-color: #fa0606;*/
+    padding:0.5em;
+    padding-top:0;
+    padding-right: 2.5em;
 }
 
 .botonAgregar{
     background-color: #92DBCD;
-    padding: 10px;
-    font-size: 18px;
     border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    float:right;
+
 }
 
 .botonAgregar:hover{
     cursor: pointer;
 }
 
-
-/*PENDIENTES*/
-.tabla > table,th,td{
-    border: 1px solid black;
+.tabla{
+    width: 100%;
     text-align: center;
+    white-space: normal;
+    border-collapse:collapse;
+    background-color: #FFFFFF;
+    table-layout: fixed;
 }
 
-th{
+.contenedorTabla{
+    /*background-color: #d5fa06ad;*/
     padding:0.5em;
-}
-
-table {
-    width: 80%;
     margin-left: 4em;
     margin-right: 4em;
 }
 
-.icono{
-    object-fit:cover; /*MODIFICAR*/
+th,td,table{
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+
+th{
+    padding:0.8em;
+}
+
+td{
+    padding:0.5em;
+}
+
+.contenedorBotonesSalir{
+    /*background-color: #fa0606;*/
+    padding:0.5em;
+    padding-left: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonSalir{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+.botonSalir:hover{
+    cursor: pointer;
+}
+
+.botonHome{
+    all:unset;
+    padding:0.5em;
+}
+
+.botonHome:hover{
+    cursor: pointer;
 }
 
 /*Pie de Página*/
