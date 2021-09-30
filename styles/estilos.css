@@ -1,37 +1,85 @@
-*{
-font-family: Arial;
-
+@font-face {font-family: hugFont; 
+    src: url('./fonts/hug-me-tight.ttf'); 
 }
 
+body {
+    margin: 0px;
+  }
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+
+/*Header*/
 .header{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.header > li{
     display: flex;
-    justify-content:space-between;
+    align-items: center;
 }
 
-.logo{
-    width: 150px;
-    height: 150px;
+.logoCuadernia{
+    object-fit:cover;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
 }
 
-.pageTitle{
+.tituloPagina{
     font-size: 4em;
-    font-family: Arial;
+    font-family: 'hugFont';  /*MODIFICAR*/
+    color: #92DBCD;
+    text-align: center;
+    padding:15px;
+}
 
+/*Cuerpo*/
+.cuerpo > button,*{
+    font-family: 'Raleway';
+}
+
+.contenedorBoton{
+    float: right;
+    padding-right: 3.5em;
+    padding-bottom: 2em;
 }
 
 .botonAgregar{
     background-color: #92DBCD;
-    padding: 1em;
-
-
+    padding: 10px;
+    font-size: 18px;
+    border-color: #54b3a0;
 }
 
-table {
-    width: 100%;
-    
+.botonAgregar:hover{
+    cursor: pointer;
 }
 
-th,td,table {
+
+/*PENDIENTES*/
+.tabla > table,th,td{
     border: 1px solid black;
     text-align: center;
 }
+
+th{
+    padding:0.5em;
+}
+
+table {
+    width: 80%;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.icono{
+    object-fit:cover; /*MODIFICAR*/
+}
+
+/*Pie de Página*/
