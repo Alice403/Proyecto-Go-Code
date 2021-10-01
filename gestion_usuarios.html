@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de usuarios</title>
+    <link rel="stylesheet" href="estilos-gestion-usuarios.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+        </style>
+</head>
+<body>
+  
+    <header>
+        <ul class = "header">
+            <li>
+                <img class = "logoCuadernia" src="./logo_cuadernia.png" alt="Logo Cuadernia">
+            </li>
+            <li>
+                <div class = "tituloPagina">GESTIÓN DE USUARIOS</div>
+            </li>
+          </ul> 
+    </header>
+    <div class = "cuerpo">
+        <div class = contenedorBoton>
+          <button class = "botonAgregar" type = "button" onclick="location.href='registro-nuevo-usuario.html'">Agregar Usuario</button>
+        </div>
+
+        <div class = "tabla">
+          <table cellspacing= "0">
+            <tr class = "campos">
+              <th>Usuario</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Tipo de Usuario</th>
+              <th>Estado del usuario</th>
+              <th>Herramientas</th>
+            </tr>
+            <tr>
+              <td>001</td>
+              <td>María</td>
+              <td>Agreda</td>
+              <td>Ejecutivo</td>
+              <td>Pendiente</td>
+              <td><button class="BotonEditar"></button></td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Álvaro</td>
+              <td>Reyes</td>
+              <td>Administrador</td>
+              <td>Autorizado</td>
+              <td><button class="BotonEditar"></button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    
+      <section class="container">
+      <button class="BotonHome"></button>
+    </section>
+
+<!--PIE DE PÁGINA-->
+      <footer class = "footer">
+      </footer>
+</body>
+</html>
