@@ -48,7 +48,7 @@ ul {
 }
 
 .BotonEditar{
-    background-image: url("lapiz.png");
+    background-image: url("icono-lapiz.png");
     background-size: 30px;
     background-color: #ffffff;
     padding: 10px;
@@ -59,7 +59,7 @@ ul {
     
 }
 .BotonHome{
-    background-image: url("icono_home.png");
+    background-image: url("home.png");
     background-size: 60px;
     background-color: #ffffff;
     padding: 10px;
