@@ -1,3 +1,7 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
 .logo{
     height: 100px;
     }
@@ -14,6 +18,7 @@ list-style: none;
 
 th,td, table{
     border: 2px solid black;
+
     
 }
 
@@ -23,4 +28,22 @@ section{
 
 li{
     margin-bottom: 10px 
+}
+
+th,td,table{
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+
+.boton{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: right;
 }
