@@ -1,114 +1,114 @@
 <DOCTYPE html>
-    <html lang="es">
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="STYLES/estilos.css"  rel="stylesheet">
-            <link rel= "shortcut icon" href="./MEDIA/Logo_3.0_Cuadernia.ico" type="image/x-icon"/>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="STYLES/estilos.css"  rel="stylesheet">
+        <link rel= "shortcut icon" href="./MEDIA/Logo_3.0_Cuadernia.ico" type="image/x-icon"/>
 
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-            </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
 
-            <title>
-                Cuadernia
-            </title>
-            
-        </head>
-        <body>
-            <header>
-                <ul class="tabla">
-                    <li>
-                        <img class="logo" src="./MEDIA/Logo_3.0_Cuadernia.png  "alt="Foto logo"/> 
-                    </li>
+        <title>Cuadernia</title>
+    </head>
 
-                    <li>
-                     <h1>REPORTE DE VENTAS</h1>
-                    </li>
-            </ul>
-            </header>
+    <body>
+      <header>
+        <ul class="encabezado">
+          <li>
+            <img class="logo" src="./MEDIA/Logo_3.0_Cuadernia.png  "alt="Foto logo"/> 
+          </li>
 
-            <main>
-                
-                <section>
-                    <a href="./formularioCuadernia.html">Registrar una venta</a>
-                </section>
-                
-                <section>
-                    <table>
-                        <caption>Ventas realizadas por Cuadernia</caption>
-                        
-                        <tr>
-                            <th>ID de venta</th>
-                            <th>Fecha de venta</th>
-                            <th>ID del producto</th>
-                            <th>Descripcion del producto</th>
-                            <th>Cantidad comprada</th>
-                            <th>Precio unitario</th>
-                            <th>Precio total</th>
-                            <th>ID del cliente</th>
-                            <th>Nombre del cliente </th>
-                            <th>Vendedor</th>
-                            <th>Estados de la venta</th>
-                            
-                        </tr>
-                        <tr>
-                            <td>280920211</td>
-                            <td>28 SEP 21</td>
-                            <td>AAA12</td>
-                            <td>Cuaderno pasta</td>
-                            <td>1</td>
-                            <td>45,000.00</td>
-                            <td>45,000.00</td>
-                            <td>1.020.745.515</td>
-                            <td>Pedro Perez</td>
-                            <td>Camila Perez</td>
-                            <td>En proceso</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>280920212</td>
-                            <td>15 SEP 21</td>
-                            <td>AAb13</td>
-                            <td>Cuaderno argollado</td>
-                            <td>3</td>
-                            <td>30,000.00</td>
-                            <td>90,000.00</td>
-                            <td>1.020.745.252</td>
-                            <td>Dario Pinzon</td>
-                            <td>Carolina Restrepo</td>
-                            <td>Entregado</td>
-                        </tr>
-                        
-                        <tr>
-                            <td colspan="11">Total de ventas: 135,000.00 </td>
-                        </tr>
-                        
-                    </table>
-                    
+          <li>
+            <div class = "tituloPagina">REPORTE DE VENTAS</div>
+          </li>
+        </ul>
+      </header>
 
-        <section class = "contenedorBotonesSalir">
+<!--Elementos principales-->
+      <main>
           <ul>
             <li>
-              <div>
-                <button class = "botonSalir" type = button>Salir de la Aplicación</button>
+            <div>
+                <a href="./formularioCuadernia.html">Registrar una venta</a>
+            </div>
+            </li>
+
+            <li>
+              <div class = contenedorTabla>
+                <table class = "tabla">
+                  <caption>Ventas realizadas por Cuadernia</caption>
+                      
+                  <tr>
+                      <th>ID de venta</th>
+                      <th>Fecha de venta</th>
+                      <th>ID del producto</th>
+                      <th>Descripcion del producto</th>
+                      <th>Cantidad comprada</th>
+                      <th>Precio unitario</th>
+                      <th>Precio total</th>
+                      <th>ID del cliente</th>
+                      <th>Nombre del cliente </th>
+                      <th>Vendedor</th>
+                      <th>Estados de la venta</th>
+                  </tr>
+                  <tr>
+                      <td>280920211</td>
+                      <td>28 SEP 21</td>
+                      <td>AAA12</td>
+                      <td>Cuaderno pasta</td>
+                      <td>1</td>
+                      <td>45,000.00</td>
+                      <td>45,000.00</td>
+                      <td>1.020.745.515</td>
+                      <td>Pedro Perez</td>
+                      <td>Camila Perez</td>
+                      <td>En proceso</td>
+                  </tr>
+                  <tr>
+                      <td>280920212</td>
+                      <td>15 SEP 21</td>
+                      <td>AAb13</td>
+                      <td>Cuaderno argollado</td>
+                      <td>3</td>
+                      <td>30,000.00</td>
+                      <td>90,000.00</td>
+                      <td>1.020.745.252</td>
+                      <td>Dario Pinzon</td>
+                      <td>Carolina Restrepo</td>
+                      <td>Entregado</td>
+                  </tr>
+                      
+                  <tr>
+                    <td colspan="11">Total de ventas: 135,000.00 </td>
+                  </tr>
+                </table>
               </div>
             </li>
+                
             <li>
-              <div>
-                <button class = "botonHome" type = button>
-                  <a href="./paginatest.html">
-                  <img src = "./media/Menu inicio.jpg" alt = "Botón para ir a Home"></button>
+              <div class = "contenedorBotonesSalir">
+                <div>
+                    <button class = "botonSalir" type = button>Salir de la Aplicación</button>
+                </div>
+                <div>
+                    <button class = "botonHome" type = button>
+                    <a href="./paginatest.html"></a>
+                    <img src = "./media/Menu inicio.jpg" alt = "Botón para ir a Home">
+                    </button>
+                </div>
+              </div>
             </li>
           </ul>
-        </section> 
-                
-            </main>
+      </main>
             
-            <footer>
-                Creado por Go-code. Todos los derechos reservados.
-            </footer>
-        </body>
-        
-        </html>
+
+
+
+      <footer>
+        <span>Creado por Go-code. Todos los derechos reservados.</span>
+      </footer>
+  </body>    
+</html>
