@@ -9,8 +9,15 @@ ul {
     list-style: none;
 }
 
+.cuerpo{
+    font-family: 'Raleway';
+    display:contents;
+    justify-content: space-between;
+}
+.cuerpo > li{
+    display: grid;
+}
 
-/*Header*/
 .header{
     display:flex;
     justify-content:space-evenly;
@@ -91,12 +98,42 @@ ul {
     border-color: #54b3a0;
     margin: 10px;
 }
+.botonRegresar{
+    background-color: #92DBCD;
+    padding: 10px;
+    font-size: 18px;
+    border-color: #54b3a0;
+    margin: 10px;
+    float:left;
+   
+}
+.botonRegistrar{
+    background-color: #92DBCD;
+    padding: 10px;
+    font-size: 18px;
+    border-color: #54b3a0;
+    margin: 10px;
+    float:right;
+    
+}
 
 .botonAgregar:hover{
     cursor: pointer;
 }
+.contenedorBotonesSalir{
+    padding:0.5em;
+    padding-left: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-
+.BotonSalir{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
 /*PENDIENTES*/
 .tabla > table,th,td{
     border: 1px solid black;

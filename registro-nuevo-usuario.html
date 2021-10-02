@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles-gestión-usuarios/estilos-gestion-usuarios.css"  rel="stylesheet">
-    <title>Registro de usuario</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="./styles-gestión-usuarios/estilos-gestion-usuarios.css"
+            rel="stylesheet"
+        />
+        <title>Registro de usuario</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul class="header">
+                <li>
+                    <img
+                        class="logoCuadernia"
+                        src="./media/logo_cuadernia.png"
+                        alt="Logo Cuadernia"
+                    />
+                </li>
+                <li>
+                    <div class="tituloPagina">REGISTRO DE USUARIO</div>
+                </li>
+            </ul>
+        </header>
 
-</head>
-<body>
-    <header>
-        <ul class = "header">
-            <li>
-                <img class = "logoCuadernia" src="./media/logo_cuadernia.png" alt="Logo Cuadernia">
+        <ul>
+            <li class="ContenedorCampos">
+                <label>
+                    Ingrese el ID del usuario
+                    <input type="text" id="ID" />
+                </label>
             </li>
-            <li>
-                <div class = "tituloPagina">REGISTRO DE USUARIO</div>
+
+            <li class="ContenedorCampos">
+                <label>
+                    Ingrese el nombre del usuario
+                    <input type="text" id="nombre" />
+                </label>
             </li>
-          </ul> 
-    </header>
 
-    <li class="ContenedorCampos">
-        <label>
-            Ingrese el ID del usuario
-            <input type="text"/>
-        </label>
-    </li>
-    
-    <li class="ContenedorCampos">
-        <label>
-             Ingrese el nombre del usuario
-            <input type="text"/>
-        </label>
-    </li>
-    
-    <li class="ContenedorCampos">
-         <label>
-            Ingrese el apellido del usuario
-             <input type="text"/>
-        </label>
-    </li>
+            <li class="ContenedorCampos">
+                <label>
+                    Ingrese el apellido del usuario
+                    <input type="text" id="apellido" />
+                </label>
+            </li>
 
-    <li class="ContenedorCampos">
-        <label>
-            Ingrese el tipo de usuario
-            <select name="tipo-usuario">
-                <option value ="vendedor">Vendedor</option>
-                <option value ="administrador">Administrador</option>
-            </select>
-        </label>
-    </li>
+            <li class="ContenedorCampos">
+                <label>
+                    Ingrese el tipo de usuario
+                    <select name="tipo usuario" id="tipo">
+                        <option value="vendedor">Vendedor</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </label>
+            </li>
 
-    <li class="ContenedorCampos">
-        <label>
-            Ingrese el estado del usuario
-            <select name="estado-usuario">
-                <option value ="autorizado">Autorizado</option>
-                <option value ="no-autorizado">No autorizado</option>
-                <option value ="pendiente">Pendiente</option>
-            </select>
-        </label>
-    </li>
-    
+            <li class="ContenedorCampos">
+                <label>
+                    Ingrese el estado del usuario
+                    <select name="estado usuario" id="estado">
+                        <option value="autorizado">Autorizado</option>
+                        <option value="no autorizado">No autorizado</option>
+                        <option value="pendiente">Pendiente</option>
+                    </select>
+                </label>
+            </li>
+        </ul>
 
-</ol>
-
-<section>
-<button class="botonAgregar">Registrar usuario </button>
-</section>
-
-
-<section>
-    <button class = "botonAgregar" type = "button" onclick="location.href='gestion_usuarios.html'">Regresar</button>
-</section>
-
-</body>
+        <div>
+            <button class="botonRegistrar" onclick="guardarUsuario();">
+                Guardar
+            </button>
+            <button
+                class="botonRegresar"
+                type="button"
+                onclick="location.href='gestion_usuarios.html'"
+            >
+                Regresar
+            </button>
+        </div>
+        <script src="./scripts/registro_usuario.js"></script>
+        <script>
+            window.onload = iniciar;
+        </script>
+    </body>
 </html>
