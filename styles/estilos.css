@@ -6,28 +6,12 @@
     height: 100px;
     }
 
-
-
-ul{
-list-style: none;
-}
-
 .tabla{
     display: flex;
 }
 
-th,td, table{
-    border: 2px solid black;
-
-    
-}
-
 section{
     margin: 10px;
-}
-
-li{
-    margin-bottom: 10px 
 }
 
 th,td,table{
@@ -35,7 +19,17 @@ th,td,table{
     border-collapse: collapse;
 }
 
-.boton{
+.contenedorBotonesSalir{
+    background-color: yellow;
+    display: flex;
+
+}
+
+.contenedorBotonesSalir > li{
+    display:flex;
+}
+
+.botonSalir{
     background-color: #92DBCD;
     border-color: #54b3a0;
     font-size: 1.1em;
@@ -43,7 +37,6 @@ th,td,table{
     
 }
 
-.container{
-    display: flex;
-    justify-content: right;
+.botonHome{
+    
 }
