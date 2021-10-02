@@ -1,6 +1,7 @@
 
 body {
     margin: 0px;
+    background-color: rgb(190, 245, 227);
   }
 
 ul {
@@ -38,7 +39,7 @@ ul {
 .tituloPagina{
     font-size: 4em;
     font-family: 'Raleway', "sans-serif";  /*MODIFICAR*/
-    color: #000000;
+    color: #0c0707ab;
     text-align: center;
     padding:15px;
 }
@@ -138,6 +139,10 @@ ul {
 .tabla > table,th,td{
     border: 1px solid black;
     text-align: center;
+    white-space: normal;
+    border-collapse:collapse;
+    background-color: #FFFFFF;
+    table-layout: fixed;
 }
 
 th{
