@@ -21,102 +21,109 @@
     <li>
     <label>
         Ingrese el ID de venta
-        <input type="number"/>
+        <input type="number" id="IDventa"/>
     </label>
     </li>
 
     <li>
         <label>
             Ingrese la fecha de venta
-            <input type="date"/>
+            <input type="date" id="fechaventa"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese el ID del producto
-            <input type="number"/>
+            <input type="number" id="IDproducto"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese la descripcion del producto
-            <input placeholder="Ej. Producto"/>
+            <input placeholder="Ej. Producto" id="descripcion"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese la cantidad comprada
-            <input type="number"/>
+            <input type="number" id="cantidad"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese el precio unitario
-            <input type="number"/>
+            <input type="number"id="preciou"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese el precio total
-            <input type="number"/>
+            <input type="number" id="preciot"/>
         </label>
     </li>
 
     <li>
         <label>
             Ingrese el ID del cliente
-            <input type="number"/>
+            <input type="number" id="IDcliente"/>
         </label>
     </li>
 
     <li>
         <label>
             Nombre del cliente
-            <input placeholder="Ej. Nombre del cliente"/>
+            <input placeholder="Ej. Nombre del cliente" id="nombrecliente"/>
         </label>
     </li>
 
     <li>
         <label>
             Nombre del vendedor
-            <input placeholder="Ej. Nombre del vendedor"/>
+            <input placeholder="Ej. Nombre del vendedor"id="vendedor"/>
         </label>
     </li>
 
     <li>
         <label>
             Estados de la venta
-            <input placeholder="Ej. Estados de la venta"/>
+            <select name = "estado de la venta" id=estadov>
+                <option value="en proceso">en proceso</option>
+                <option value="cancelado">cancelado</option>
+                <option value="entregado">entregado</option>
+            </select>
         </label>
     </li>
 
 </ol>
 
 <section>
-<button class="boton" onclick="myFunction()">Registrar  la venta</button>
-
-<script>
-
-    function myFunction() {
-    
-      alert("La venta fue registrada satisfactoriamente!");
-    
-    }
-    
-</script>
+    <div>
+        <button class="botonRegistrar" onclick="guardarVenta();">
+            Guardar
+        </button>
+        <button
+            class="botonRegresar"
+            type="button"
+            onclick="location.href='Cuadernia.html'"
+        >
+            Regresar
+        </button>
+    </div>
+    <script src="./scripts/registro_venta.js"></script>
+    <script>
+        window.onload = iniciar;
+    </script>
     
     
 </section>
 
 
-<section>
-<a href="./Cuadernia.html">Regresar</a>
-</section>
+
 
 
 

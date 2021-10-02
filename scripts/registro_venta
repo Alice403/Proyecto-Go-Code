@@ -1,0 +1,74 @@
+function guardarVenta() {
+    var usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    var modo = localStorage.getItem("modo");
+    if (modo == "insercion") {
+        agregarVenta(usuarios);
+    }
+    if (modo == "edicion") {
+        editarVenta(usuarios);
+    }
+    var s_usuarios = JSON.stringify(usuarios);
+    localStorage.setItem("usuarios", s_usuarios);
+
+    window.location = "./Cuadernia";
+}
+
+function agregarVenta(usuarios) {
+    usuarios.push({
+        idventa: document.getElementById("IDventa").value,
+        fechaventa: document.getElementById("fechaventa").value,
+        idproducto: document.getElementById("IDproducto").value,
+        descripcion: document.getElementById("descripcion").value,
+        cantidad: document.getElementById("cantidad").value,
+        preciou: document.getElementById("preciou").value,
+        preciot: document.getElementById("preciot").value,
+        idcliente: document.getElementById("IDcliente").value,
+        nombrecliente: document.getElementById("nombrecliente").value,
+        vendedor: document.getElementById("vendedor").value,
+        estadov: document.getElementById("estadov").value,
+    });
+    alert("La venta fue agregada con exito!")
+}
+
+function editarVenta(usuarios) {
+    var fila = localStorage.getItem("fila") - 1;
+    var usuario = usuarios[fila];
+    usuario.idventa = document.getElementById("IDventa").value;
+    usuario.fechaventa = document.getElementById("fechaventa").value;
+    usuario.idproducto = document.getElementById("IDproducto").value;
+    usuario. descripcion = document.getElementById("descripcion").value;
+    usuario.cantidad = document.getElementById("cantidad").value;
+    usuario.preciou = document.getElementById("preciou").value;
+    usuario.preciot = document.getElementById("preciot").value;
+    usuario.idcliente = document.getElementById("IDcliente").value;
+    usuario.nombrecliente = document.getElementById("nombrecliente").value;
+    usuario.vendedor = document.getElementById("vendedor").value;
+    usuario.estadov = document.getElementById("estadov").value;
+        
+    alert("La venta se modifico exito!")
+
+}
+
+function poblarCampos() {
+    var fila = localStorage.getItem("fila") - 1;
+    var usuarios = JSON.parse(localStorage.getItem("usuarios"));
+
+    document.getElementById("IDventa").value = usuarios[fila].idventa;
+    document.getElementById("fechaventa").value = usuarios[fila].fechaventa;
+    document.getElementById("IDproducto").value = usuarios[fila].idproducto;
+    document.getElementById("descripcion").value = usuarios[fila].descripcion;
+    document.getElementById("cantidad").value = usuarios[fila].cantidad;
+    document.getElementById("preciou").value = usuarios[fila].preciou;
+    document.getElementById("preciot").value = usuarios[fila].preciot;
+    document.getElementById("IDcliente").value = usuarios[fila].idcliente;
+    document.getElementById("vendedor").value = usuarios[fila].vendedor;
+    document.getElementById("estadov").value = usuarios[fila].estadov;
+
+}
+
+function iniciar() {
+    var modo = localStorage.getItem("modo");
+    if (modo === "edicion") {
+        poblarCampos();
+    }
+}
