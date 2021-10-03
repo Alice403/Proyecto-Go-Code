@@ -8,8 +8,12 @@ body{
 }
 
 .logo {
-    padding: 10px;
-    width: 400px;
+    padding: 0px;
+    width: 300px;
+}
+
+ul{
+    padding: 0;
 }
 
 .botones {
@@ -26,7 +30,7 @@ body{
 .mainButton{
     /*background-color: #b4b4b4;*/
     font-family: 'Raleway';
-    color: white;
+    color: rgb(14, 100, 134);
     border: 0px;
     padding: 5px 10px;
     border-radius: 8px;
@@ -42,7 +46,7 @@ body{
  
  .mainButton:hover {
      cursor: pointer;
-     box-shadow: 1px 1px #747474;
+     box-shadow: 1px 1px 2px #2a7cda;
      transform: scale(1.2);
      border: solid 1px #30c1fa;
  }
