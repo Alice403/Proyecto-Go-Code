@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name = "description" content = "Página de edición de productos">
+    <link rel = "stylesheet" href = "./styles/estilos.css" type = "text/css">
+    <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <title>Registro de Producto</title>
+  </head>
+
+  <body>
+<!-- ENCABEZADO -->
+    <header>
+      <ul class = "encabezado">
+        <li>
+            <img class = "logoCuadernia" src="./media/logo_cuadernia.png" alt="Logo Cuadernia">
+        </li>
+        <li>
+            <div class = "tituloPaginaFormulario">EDITAR PRODUCTOS</dv>
+        </li>
+      </ul>
+    </header>
+
+<!-- CUERPO -->
+  <div class = "contenedorFormulario">
+    <ul class = "formulario">
+      <li>
+        <div class = "contenedorDeDatos">
+          <label> Identificador del producto
+          <input type = "number" >
+          </label>
+        </div>
+      </li>
+
+      <li>
+        <div class = "contenedorDeDatos">
+          <label> Descripción del producto
+            <input type = "text">
+          </label>
+        </div>
+      </li>
+
+      <li>
+        <div class = "contenedorDeDatos">
+          <label> Valor Unitario
+            <input type = "number">
+          </label>
+        </div>
+      </li>
+
+      <li>
+        <div class = "contenedorDeDatos">
+          <label> ¿Disponible?
+            <input type = "checkbox">
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class = "contenedorBotonesGuardar">
+    <div>
+        <input class = "boton" type= "button" onclick = "location.href = ('./admin_productos.html');" value = "Regresar" />
+    </div>
+    <div>
+      <button class = "boton" type = button>Guardar</button>
+    </div>
+  </div>
+
+  </body>
+</html>
