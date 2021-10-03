@@ -1,10 +1,28 @@
-body{
+body {
+    margin: 0px;
     background-color: rgb(190, 245, 227);
+  }
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
 }
 
-.contenedor-logo {
+button,input{
+    font-family: 'Raleway';
+}
+
+/* PÁGINA PRINCIPAL */
+/*Header*/
+.encabezado{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.encabezado > li{
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -12,17 +30,137 @@ body{
     width: 300px;
 }
 
-ul{
-    padding: 0;
+.logoCuadernia{
+    object-fit:cover;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
 }
 
-.botones {
+.tituloPagina,.tituloPaginaFormulario{
+    font-size: 4em;
+    font-family: 'Raleway';
+    color: #0c0707ab;
+    text-align: center;
+    padding:15px;
+}
+
+/*Cuerpo*/
+.cuerpo{
+    font-family: 'Raleway';
+    display:contents;
+    justify-content: space-between;
+}
+
+.cuerpo > li{
+    display: grid;
+}
+
+.boton{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.contenedorBotonAgregar{
+    /*background-color: #fa0606;*/
+    padding:0.5em;
+    padding-top:0;
+    padding-right: 2.5em;
+}
+
+.botonAgregar{
+    float:right;
+}
+
+.tabla{
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    border-collapse:collapse;
+    background-color: #FFFFFF;
+    table-layout: fixed;
+}
+
+.contenedorTabla{
+    /*background-color: #d5fa06ad;*/
+    padding:0.5em;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+th,td,table{
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+
+th{
+    padding:0.8em;
+}
+
+td{
+    padding:0.5em;
+}
+
+.botonEditar{
+    all:unset;
+}
+
+.botonEditar:hover{
+    cursor:pointer;
+}
+
+.contenedorBotonesSalir{
+    /*background-color: #fa0606;*/
+    padding:0.5em;
+    padding-left: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonHome{
+    all:unset;
+    padding: 0.5em;
+    background: url(../media/icono_home.png) no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+/*Pie de Página*/
+/* PÁGINA FORMULARIO PRODUCTOS*/
+.formulario{
+    /* background-color: red; */
+    font-family: 'Raleway';
+    padding:1em;
+    display: grid;
+    justify-items: center;
+}
+
+.contenedorDeDatos{
+    padding: 0.1em;
+}
+
+input{
+    padding: 0.5em;
+}
+
+.contenedorBotonesGuardar{
+    /* background-color: #7006fa; */
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 1em;
     display: flex;
     justify-content: center;
 }
 
 
-.container-mainButton {
+.containerMainButton {
     display: flex;
     justify-content: center;
 }
