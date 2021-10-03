@@ -1,5 +1,8 @@
+body{
+    background-color: rgb(190, 245, 227);
+}
+
 .contenedor-logo {
-    /*background-color: blue;*/
     display: flex;
     justify-content: center;
 }
@@ -15,7 +18,8 @@
 }
 
 .mainButton{
-    background-color: #b4b4b4;
+    /*background-color: #b4b4b4;*/
+    font-family: 'Raleway';
     color: white;
     border: 0px;
     padding: 5px 10px;
@@ -24,11 +28,15 @@
     font-size: 25px;
     margin: 8px;
     padding: 6px;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
  }
  
  .mainButton:hover {
      cursor: pointer;
      box-shadow: 1px 1px #747474;
      transform: scale(1.2);
-     border: solid 1px #353535;
+     border: solid 1px #30c1fa;
  }
