@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(190, 245, 227);
+}
+
+.contenedor-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    padding: 0px;
+    width: 300px;
+}
+
+ul{
+    padding: 0;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-mainButton {
+    display: flex;
+    justify-content: center;
+}
+
+.mainButton{
+    /*background-color: #b4b4b4;*/
+    font-family: 'Raleway';
+    color: rgb(14, 100, 134);
+    border: 0px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+    font-size: 25px;
+    margin: 8px;
+    padding: 6px;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+ }
+ 
+ .mainButton:hover {
+     cursor: pointer;
+     box-shadow: 1px 1px 2px #2a7cda;
+     transform: scale(1.2);
+     border: solid 1px #30c1fa;
+ }
