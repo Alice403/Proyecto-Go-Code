@@ -5,6 +5,8 @@
       <meta name = "description" content = "Página del administrador de productos">
       <link rel = "stylesheet" href = "./styles/estilos.css" type = "text/css">
       <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
+      <script src="./scripts/gestion_productos.js"></script>
+      <script> window.onload = iniciar;</script>
       <title>Administrador de productos</title>
       
       <style> @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -29,14 +31,14 @@
         <li>
           <div class = contenedorBotonAgregar>
             <input class = "botonAgregar boton" type= "button" 
-            onclick = "location.href = ('./modificar_productos.html');" 
-            value = "Agregar Producto" />
+            onclick = "agregarProducto();"  
+            value = "Agregar Producto" /> <!-- agregarProducto abre pagina edicion y ejecuta js-->
           </div>
         </li>
         
         <li>
           <div class = contenedorTabla>
-            <table class = "tabla">
+            <table class = "tabla" id="tablaProductos">
               <tr class = "campos">
                 <th>Identificador del producto</th>
                 <th>Descripción del producto</th>
@@ -44,7 +46,7 @@
                 <th>¿Disponible?</th>
                 <th>Edición</th>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>CUAD001</td>
                 <td>Cuaderno Rallado Norma</td>
                 <td>$10000</td>
@@ -64,14 +66,7 @@
                 <td>$20000</td>
                 <td>No</td>
                 <td class = "iconoEditar"><i class="fas fa-pencil-alt iconoEditar"></i></td>
-              </tr>
-              <tr>
-                <td>CUAD004</td>
-                <td>Cuaderno pequeño Scribe</td>
-                <td>$5000</td>
-                <td>Sí</td>
-                <td class = "iconoEditar"><i class="fas fa-pencil-alt iconoEditar"></i></td>
-              </tr>
+              </tr> -->
             </table>
           </div>
         </li>

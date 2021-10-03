@@ -5,6 +5,8 @@
     <meta name = "description" content = "Página de edición de productos">
     <link rel = "stylesheet" href = "./styles/estilos.css" type = "text/css">
     <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
+    <script src="./scripts/registro_producto.js"></script>
+    <script>window.onload = iniciar;</script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     <title>Registro de Producto</title>
@@ -29,7 +31,7 @@
       <li>
         <div class = "contenedorDeDatos">
           <label> Identificador del producto
-          <input type = "number" >
+          <input type = "number" id = "ID">
           </label>
         </div>
       </li>
@@ -37,7 +39,7 @@
       <li>
         <div class = "contenedorDeDatos">
           <label> Descripción del producto
-            <input type = "text">
+            <input type = "text" id = "descripcion">
           </label>
         </div>
       </li>
@@ -45,7 +47,7 @@
       <li>
         <div class = "contenedorDeDatos">
           <label> Valor Unitario
-            <input type = "number">
+            <input type = "number" id = "valor_unitario">
           </label>
         </div>
       </li>
@@ -53,7 +55,7 @@
       <li>
         <div class = "contenedorDeDatos">
           <label> ¿Disponible?
-            <input type = "checkbox">
+            <input type = "text" id = "esta_disponible">
           </label>
         </div>
       </li>
@@ -65,7 +67,7 @@
         <input class = "boton" type= "button" onclick = "location.href = ('./admin_productos.html');" value = "Regresar" />
     </div>
     <div>
-      <button class = "boton" type = button>Guardar</button>
+      <button class = "boton" type = button onclick="guardarProducto();">Guardar</button>
     </div>
   </div>
 

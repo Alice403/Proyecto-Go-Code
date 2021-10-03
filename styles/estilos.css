@@ -102,6 +102,14 @@ td{
     padding:0.5em;
 }
 
+.botonEditar{
+    all:unset;
+}
+
+.botonEditar:hover{
+    cursor:pointer;
+}
+
 .contenedorBotonesSalir{
     /*background-color: #fa0606;*/
     padding:0.5em;
