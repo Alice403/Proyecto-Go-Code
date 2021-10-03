@@ -28,11 +28,12 @@
       <ul class = "cuerpo">
         <li>
           <div class = contenedorBotonAgregar>
-              <input class = "botonAgregar boton" type= "button" onclick = "location.href = ('./modificar_productos.html');" value = "Agregar Producto" />
+            <input class = "botonAgregar boton" type= "button" 
+            onclick = "location.href = ('./modificar_productos.html');" 
+            value = "Agregar Producto" />
           </div>
         </li>
         
-
         <li>
           <div class = contenedorTabla>
             <table class = "tabla">
@@ -41,7 +42,7 @@
                 <th>Descripción del producto</th>
                 <th>Valor Unitario</th>
                 <th>¿Disponible?</th>
-                <th>Herramientas</th>
+                <th>Edición</th>
               </tr>
               <tr>
                 <td>CUAD001</td>
@@ -78,12 +79,13 @@
         <li>
           <div class = "contenedorBotonesSalir">
             <div>
-              <button class = "boton" type = button>Salir de la Aplicación</button>
+              <input class = "boton" type= "button" 
+              onclick = "location.href = ('./menu_inicio.html');" 
+              value = "Salir de la Aplicación"/> <!-- MODIFICAR -->
             </div>
             <div>
-              <button class = "botonHome boton" type = button>
-                <img src = "./media/icono_home.png" alt = "Botón para ir a Home">
-              </button>
+              <input class = "boton botonHome" type= "button" 
+              onclick = "location.href = ('./menu_inicio.html');"/> <!-- MODIFICAR -->
             </div>
           </div>
         </li>
