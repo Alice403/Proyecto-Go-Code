@@ -1,12 +1,12 @@
 function editarUsuario(fila) {
     localStorage.setItem("modo", "edicion");
     localStorage.setItem("fila", fila);
-    window.location = "./registro-nuevo-usuario.html";
+    window.location = "./registro_usuarios.html";
 }
 
 function agregarUsuario() {
     localStorage.setItem("modo", "insercion");
-    window.location = "./registro-nuevo-usuario.html";
+    window.location = "./registro_usuarios.html";
 }
 
 function iniciarUsuarios() {
