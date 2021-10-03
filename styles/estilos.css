@@ -17,6 +17,12 @@ body{
     justify-content: center;
 }
 
+
+.container-mainButton {
+    display: flex;
+    justify-content: center;
+}
+
 .mainButton{
     /*background-color: #b4b4b4;*/
     font-family: 'Raleway';
