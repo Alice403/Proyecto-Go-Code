@@ -3,10 +3,23 @@ body {
     background-color: rgb(190, 245, 227);
   }
 
+.logo {
+    margin: 10px;
+}
+
+.contenedor-logo{
+    display: flex;
+    justify-content: center;
+}
+
 ul {
     padding: 0px;
-    margin: 0px;
+    margin: 10px;
     list-style: none;
+}
+
+.botones{
+    padding: 1em;
 }
 
 button,input{
