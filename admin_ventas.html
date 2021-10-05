@@ -5,7 +5,7 @@
       <meta name = "description" content = "Página del administrador de productos">
       <link rel = "stylesheet" href = "./styles/estilos.css" type = "text/css">
       <script src="https://kit.fontawesome.com/d4cd33a1a3.js" crossorigin="anonymous"></script>
-      <script src="./scripts/gestion_productos.js"></script>
+      <script src="./scripts/gestion_ventas.js"></script>
       <script> window.onload = iniciar;</script>
       <title>Administrador de productos</title>
       
@@ -21,7 +21,7 @@
             <img class = "logoCuadernia" src="./media/logo_cuadernia.png" alt="Logo Cuadernia">
         </li>
         <li>
-            <div class = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
+            <div class = "tituloPagina">MODULO DE VENTAS</div>
         </li>
       </ul>
     </header>
@@ -32,7 +32,7 @@
           <div class = contenedorBotonAgregar>
             <input class = "botonAgregar boton" type= "button" 
             onclick = "agregarProducto();"  
-            value = "Agregar Producto" /> <!-- agregarProducto abre pagina edicion y ejecuta js-->
+            value = "Agregar venta" /> <!-- agregarProducto abre pagina edicion y ejecuta js-->
           </div>
         </li>
         
@@ -40,10 +40,17 @@
           <div class = contenedorTabla>
             <table class = "tabla" id="tablaProductos">
               <tr class = "campos">
-                <th>Identificador del producto</th>
+                <th>ID de la venta</th>
+                <th>Fecha de venta</th>
+                <th>ID del producto</th>
                 <th>Descripción del producto</th>
-                <th>Valor Unitario</th>
-                <th>¿Disponible?</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Precio total</th>
+                <th>ID del cliente</th>
+                <th>Nombre del cliente</th>
+                <th>Vendedor</th>
+                <th>Estados de la venta</th>
                 <th>Edición</th>
               </tr>
               <!-- <tr>
