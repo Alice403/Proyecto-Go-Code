@@ -12,7 +12,6 @@ function agregarVenta() {
 function iniciarVentas() {
     var a_ventas = [
         {
-
            
             idventa: "021020211",
             fechaventa: "2 OCT 21",
@@ -66,7 +65,9 @@ function poblarTabla() {
         fila.insertCell(10).innerHTML = venta.estadov;
         fila.insertCell(
             11
-        ).innerHTML = `<button class="BotonEditar" onclick="editarVenta(${count})"></button>`;
+        ).innerHTML = `<button class="BotonEditar" onclick="editarVenta(${count})">
+        <i class="fas fa-pencil-alt botonEditar"></i>
+        </button>`;
         count++;
     });
 }
