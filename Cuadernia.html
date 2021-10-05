@@ -35,32 +35,38 @@
           <ul>
             <li>
             <div class="contenedorBotonAgregar"> 
-               <!-- <button class = "botonAgregar" type = button>Registrar una venta</button> -->
-                    <a href="./formularioCuadernia.html">Registrar una venta</a>
+                <button 
+                    class = "botonAgregar" 
+                    type = button
+                    onclick="agregarVenta();"
+                >
+                Registrar una venta</button> 
+                <!--<a href="./formularioCuadernia.html">Registrar una venta</a>-->
 
 
             </div>
             </li>
 
             <li>
-              <div class = contenedorTabla>
-                <table class = "tabla">
+              <div class ="tabla" >
+                <table cellspacing=0 id="tablaVentas">
                   <caption>Ventas realizadas por Cuadernia</caption>
                       
                   <tr>
-                      <th>ID de venta</th>
-                      <th>Fecha de venta</th>
-                      <th>ID del producto</th>
-                      <th>Descripcion del producto</th>
-                      <th>Cantidad comprada</th>
-                      <th>Precio unitario</th>
-                      <th>Precio total</th>
-                      <th>ID del cliente</th>
-                      <th>Nombre del cliente </th>
-                      <th>Vendedor</th>
-                      <th>Estados de la venta</th>
-                      <th>Herramientas</th>
+                      <th >ID de venta</th>
+                      <th >Fecha de venta</th>
+                      <th >ID del producto</th>
+                      <th >Descripcion del producto</th>
+                      <th >Cantidad comprada</th>
+                      <th >Precio unitario</th>
+                      <th >Precio total</th>
+                      <th >ID del cliente</th>
+                      <th >Nombre del cliente </th>
+                      <th >Vendedor</th>
+                      <th >Estados de la venta</th>
+                      <th >Herramientas</th>
                   </tr>
+                  <!--
                   <tr>
                       <td>280920211</td>
                       <td>28 SEP 21</td>
@@ -93,6 +99,9 @@
                   <tr>
                     <td colspan="11">Total de ventas: 135,000.00 </td>
                   </tr>
+                  -->
+
+                  <tbody></tbody>
                 </table>
               </div>
             </li>
@@ -110,7 +119,14 @@
                 </div>
               </div>
             </li>
+
           </ul>
+
+          <script src="./scripts/gestion_ventas.js"></script>
+          <script>
+              window.onload = iniciar;
+          </script>
+          
       </main>
             
 
