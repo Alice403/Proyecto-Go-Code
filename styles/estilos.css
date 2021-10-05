@@ -3,10 +3,23 @@ body {
     background-color: rgb(190, 245, 227);
   }
 
+.logo {
+    margin: 10px;
+}
+
+.contenedor-logo{
+    display: flex;
+    justify-content: center;
+}
+
 ul {
     padding: 0px;
-    margin: 0px;
+    margin: 10px;
     list-style: none;
+}
+
+.botones{
+    padding: 1em;
 }
 
 button,input{
@@ -23,6 +36,11 @@ button,input{
 .encabezado > li{
     display: flex;
     align-items: center;
+}
+
+.logo {
+    padding: 0px;
+    width: 300px;
 }
 
 .logoCuadernia{
@@ -128,9 +146,7 @@ td{
 }
 
 /*Pie de Página*/
-
-
-/* PÁGINA FORMULARIO */
+/* PÁGINA FORMULARIO PRODUCTOS*/
 .formulario{
     /* background-color: red; */
     font-family: 'Raleway';
@@ -153,6 +169,35 @@ input{
     padding-right: 1.5em;
     padding-top: 1em;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 }
+
+
+.containerMainButton {
+    display: flex;
+    justify-content: center;
+}
+
+.mainButton{
+    /*background-color: #b4b4b4;*/
+    font-family: 'Raleway';
+    color: rgb(14, 100, 134);
+    border: 0px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+    font-size: 25px;
+    margin: 8px;
+    padding: 6px;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+ }
+ 
+ .mainButton:hover {
+     cursor: pointer;
+     box-shadow: 1px 1px 2px #2a7cda;
+     transform: scale(1.2);
+     border: solid 1px #30c1fa;
+ }
