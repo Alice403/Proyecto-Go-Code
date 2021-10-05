@@ -10,7 +10,7 @@ function guardarVenta() {
     var s_ventas = JSON.stringify(ventas);
     localStorage.setItem("ventas", s_ventas);
 
-    window.location = "./Cuadernia";
+    window.location = "./Cuadernia.html";
 }
 
 function agregarVenta(ventas) {
