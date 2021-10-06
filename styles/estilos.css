@@ -1,15 +1,17 @@
 body {
     margin: 0px;
-    background-color: rgb(190, 245, 227);
+    background-color: white;
   }
-
-.logo {
-    margin: 10px;
-}
 
 .contenedor-logo{
     display: flex;
     justify-content: center;
+    margin-top: 100px;
+}
+
+.logo {
+    margin: 10px;
+    width: 15em;
 }
 
 ul {
@@ -36,11 +38,6 @@ button,input{
 .encabezado > li{
     display: flex;
     align-items: center;
-}
-
-.logo {
-    padding: 0px;
-    width: 300px;
 }
 
 .logoCuadernia{
@@ -181,23 +178,33 @@ input{
 .mainButton{
     /*background-color: #b4b4b4;*/
     font-family: 'Raleway';
-    color: rgb(14, 100, 134);
+    color: black;
+    width: 16em;
     border: 0px;
-    padding: 5px 10px;
-    border-radius: 8px;
     font-weight: bolder;
-    font-size: 25px;
-    margin: 8px;
-    padding: 6px;
+    margin: 20px;
     background-color: #92DBCD;
     border-color: #54b3a0;
-    font-size: 1.1em;
-    padding: 0.7em;
+    font-size: 1.2em;
+    padding: 15px 50px;
  }
+ 
+ .button1{
+     background-color: #CDF066;
+ }
+
+ .button2{
+    background-color: #92DBCD
+ }
+
+ .button3{
+    background-color: #8935A1
+ }
+ 
  
  .mainButton:hover {
      cursor: pointer;
      box-shadow: 1px 1px 2px #2a7cda;
-     transform: scale(1.2);
+     transform: scale(1.1);
      border: solid 1px #30c1fa;
  }
