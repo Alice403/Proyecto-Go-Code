@@ -41,9 +41,8 @@ function poblarTabla() {
         fila.insertCell(2).innerHTML = usuario.apellido;
         fila.insertCell(3).innerHTML = usuario.tipo;
         fila.insertCell(4).innerHTML = usuario.estado;
-        fila.insertCell(
-            5
-        ).innerHTML = `<button class="BotonEditar" onclick="editarUsuario(${count})"></button>`;
+        fila.insertCell(5).innerHTML = `<button class = "botonEditar" onclick="editarUsuario(${count})">
+        <i class="fas fa-pencil-alt botonEditar"></i></button>`;
         count++;
     });
 }
