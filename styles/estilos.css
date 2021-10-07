@@ -143,6 +143,7 @@ td{
 }
 
 /*Pie de Página*/
+
 /* PÁGINA FORMULARIO PRODUCTOS*/
 .formulario{
     /* background-color: red; */
@@ -169,6 +170,7 @@ input{
     justify-content: center;
 }
 
+/* MENÚ INICIO */
 
 .containerMainButton {
     display: flex;
@@ -176,19 +178,18 @@ input{
 }
 
 .mainButton{
-    /*background-color: #b4b4b4;*/
+    /* background-color: #b4b4b4; */
     font-family: 'Raleway';
     color: black;
     width: 16em;
     border: 0px;
-    font-weight: bolder;
     margin: 20px;
     background-color: #92DBCD;
     border-color: #54b3a0;
     font-size: 1.2em;
     padding: 15px 50px;
  }
- 
+
  .button1{
      background-color: #CDF066;
  }
