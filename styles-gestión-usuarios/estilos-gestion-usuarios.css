@@ -94,6 +94,7 @@ ul {
 
 .botonAgregar{
     background-color: #92DBCD;
+    float: right;
     padding: 10px;
     font-size: 18px;
     border-color: #54b3a0;
