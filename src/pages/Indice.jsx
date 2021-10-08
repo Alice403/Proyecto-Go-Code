@@ -1,11 +1,11 @@
 import React from 'react'
 
-const indice = () => {
+const Indice = () => {
   return (
     <div>
-        Pagina principal
+        Página principal
     </div>
   )
 }
 
-export default indice
+export default Indice

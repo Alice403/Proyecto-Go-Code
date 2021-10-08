@@ -1,6 +1,6 @@
 import React from 'react'
 
-const menu_inicio = () => {
+const MenuInicio = () => {
   return (
     <div>
       <section className="botones">
@@ -23,5 +23,5 @@ const menu_inicio = () => {
   )
 }
 
-export default menu_inicio
+export default MenuInicio
 

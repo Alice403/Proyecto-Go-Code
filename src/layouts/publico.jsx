@@ -1,6 +1,6 @@
 import React from 'react'
 
-const publico = () => {
+const Publico = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const publico = () => {
   )
 }
 
-export default publico
+export default Publico

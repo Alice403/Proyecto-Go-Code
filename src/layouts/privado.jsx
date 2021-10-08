@@ -1,6 +1,6 @@
 import React from 'react'
 
-const privado = () => {
+const Privado = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const privado = () => {
   )
 }
 
-export default privado
+export default Privado
