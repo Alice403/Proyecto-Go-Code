@@ -51,7 +51,9 @@ const GestionUsuarios = () => {
                   </div>
                   <div>
                     <Link to = '/'>
-                    <input className = "boton botonHome" type= "button" />
+                      <i class="fas fa-home fa-3x botonHome">
+                      {/* Si quieres con personita fa-house-user */}
+                      </i>
                     </Link>
                   </div>
                 </div>

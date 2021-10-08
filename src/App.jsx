@@ -2,9 +2,10 @@ import 'styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Importaciones de todos los layouts (bases de pagina)
-//import privado from '/layouts/privado' Layout del panel administración
-//import publico from '/layouts/publico' //Layout de la página principal
-// import layoutAut from '/.layouts/autenticacion' //Layout de autenticación
+import Privado from 'layouts/Privado';
+import Publico from 'layouts/Publico';
+import LayoutAut from 'layouts/LayoutAut';
+import LayoutMenu from 'layouts/LayoutMenu';
 
 //Importaciones de las páginas
 import Indice from 'pages/Indice';
@@ -17,7 +18,7 @@ import AdminProductos from 'pages/admin/Productos/AdminProductos';
 import ModificarProducto from 'pages/admin/Productos/ModificarProducto';
 import GestionVentas from 'pages/admin/Ventas/GestionVentas';
 import ModificarVenta from 'pages/admin/Ventas/ModificarVenta';
-import GestionUsuarios from 'pages/admin/Usuarios/GestionUsuarios'
+import GestionUsuarios from 'pages/admin/Usuarios/GestionUsuarios';
 import RegistrarUsuario from 'pages/admin/Usuarios/RegistrarUsuario';
 
 function App() {
@@ -37,9 +38,9 @@ function App() {
               </Switch>
             {/* </LayoutAut> */}
           </Route>
-          <Route path = {['/admin','/admin/productos', '/admin/productos/editar',
+          <Route path = {['/admin/productos', '/admin/productos/editar',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
-            {/* <Privado> LAYOUT MODIFICAR */} 
+            {/* <Privado> */} 
               <Switch>
                 <Route path = '/admin/productos/editar'>
                   <ModificarProducto/>
@@ -61,12 +62,17 @@ function App() {
                 <Route path = '/admin/usuarios'>
                   <GestionUsuarios/>
                 </Route>
-                
+              {/* </Privado> */}
+            </Switch>
+          </Route>
+          <Route path = {['/admin']}>
+            {/* </LayoutMenu> */}
+              <Switch>
                 <Route path = '/admin'>
                   <MenuInicio/>
                 </Route>
               </Switch>
-            {/* </Privado> */}
+            {/* </LayoutMenu> */}
           </Route>
           <Route path = {['/']}>
             {/* <Publico> */}

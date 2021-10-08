@@ -1,34 +1,20 @@
-body {
+/* Características generales de la página (layouts) */
+body{
     margin: 0px;
     background-color: rgb(190, 245, 227);
   }
 
-.contenedor-logo{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-.logo {
-    margin: 10px;
-    width: 15em;
-}
-
-ul {
+ul{
     padding: 0px;
     margin: 10px;
     list-style: none;
-}
-
-.botones{
-    padding: 1em;
 }
 
 button,input{
     font-family: 'Raleway';
 }
 
-/* PÁGINA PRINCIPAL */
+/* Características de los módulos administrativos */
 /*Header*/
 .encabezado{
     display:flex;
@@ -126,7 +112,7 @@ td{
 }
 
 .contenedorBotonesSalir{
-    /*background-color: #fa0606;*/
+    /* background-color: #fa0606; */
     padding:0.5em;
     padding-left: 2.5em;
     display: flex;
@@ -135,11 +121,9 @@ td{
 }
 
 .botonHome{
-    all:unset;
-    padding: 0.5em;
-    /*background: url(../media/icono_home.png) no-repeat;*/
-    width: 40px;
-    height: 40px;
+    padding: 0.1em;
+    color: black;
+    justify-content: center;
 }
 
 /*Pie de Página*/
@@ -169,6 +153,23 @@ input{
     justify-content: center;
 }
 
+/* Menú Administrativo (MenuInicio) */
+.contenedor-logo{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.logo{
+    margin: 10px;
+    width: 15em;
+}
+
+.botones{
+    background-color: violet;
+    padding: 1em;
+}
 
 .containerMainButton {
     display: flex;
