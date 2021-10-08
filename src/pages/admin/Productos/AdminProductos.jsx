@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from 'media/logo_cuadernia.png';
+import Logo from 'media/logo_cuadernia.png';
 
 const AdminProductos = () => {
   return (
@@ -8,7 +8,7 @@ const AdminProductos = () => {
     <header>
       <ul class = "encabezado">
         <li>
-            <img class = "logoCuadernia" src = {logo} alt="Logo Cuadernia"></img>
+            <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
         </li>
         <li>
             <div class = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
@@ -19,9 +19,10 @@ const AdminProductos = () => {
       <ul className = "cuerpo">
         <li>
           <div className = "contenedorBotonAgregar">
-            <input className = "botonAgregar boton" type= "button" 
-            onclick = "agregarProducto();"  
-            value = "Agregar Producto" />
+            <Link to = '/admin/productos/editar'>
+              <input className = "botonAgregar boton" type= "button" 
+              value = "Agregar Producto" />
+            </Link>
           </div>
         </li>
         
@@ -36,6 +37,7 @@ const AdminProductos = () => {
                 <th>Edición</th>
               </tr>
             </table>
+
           </div>
         </li>
 
