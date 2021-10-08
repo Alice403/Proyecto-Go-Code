@@ -1,21 +1,30 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import Logo from 'media/logo_cuadernia.png';
 
 const MenuInicio = () => {
   return (
     <div>
       <section className="botones">
         <div className="contenedor-logo">
-          <img className="logo" alt="Logo de Cuadernia"/>
+          <img className="logo" src = {Logo} alt="Logo de Cuadernia"/>
         </div>
         <ul>
           <div className="containerMainButton">
-              <a href="admin_ventas.html"><button  className="mainButton button1">Administrar ventas</button></a>
+            <Link to='/admin/ventas'><button  className="mainButton button1">
+              Administrar ventas</button>
+            </Link>
           </div>
           <div className="containerMainButton">
-              <a href="admin_ventas.html"><button  className="mainButton button2">Administrar productos</button></a>
+            <Link to='/admin/productos'>
+              <button  className="mainButton button2">
+              Administrar productos</button>
+            </Link>
           </div>
           <div className="containerMainButton">
-              <a href="gestion_usuarios.html"><button  className="mainButton button3">Administrar usuarios</button></a>
+            <Link to='/admin/usuarios'><button  className="mainButton button3">
+              Administrar usuarios</button>
+            </Link>
           </div>
         </ul>
       </section>
