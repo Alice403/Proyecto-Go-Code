@@ -1,19 +1,14 @@
 import React from 'react';
-import {link} from 'react-router-dom';
-import 'styles/styles.css';
+import {Link} from 'react-router-dom';
+import logo from 'media/logo_cuadernia.png';
 
 const GestionUsuarios = () => {
   return (
     <div>
-      <body>
         <header>
             <ul class="encabezado">
                 <li>
-                    <img
-                        class="logoCuadernia"
-                        src="./media/logo_cuadernia.png"
-                        alt="Logo Cuadernia"
-                    />
+                <img class = "logoCuadernia" src = {logo} alt="Logo Cuadernia"></img>
                 </li>
                 <li>
                     <div class="tituloPagina">GESTIÓN DE USUARIOS</div>
@@ -38,7 +33,7 @@ const GestionUsuarios = () => {
                             <th scope="col">Apellidos</th>
                             <th scope="col">Tipo de Usuario</th>
                             <th scope="col">Estado del usuario</th>
-                            <th scope="col">Herramientas</th>
+                            <th scope="col">Edición</th>
                         </tr>
                         <tbody></tbody>
                     </table>
@@ -48,21 +43,19 @@ const GestionUsuarios = () => {
             <li>
                 <div className = "contenedorBotonesSalir">
                   <div>
+                    <Link to = '/admin'>
                     <input className = "boton" type= "button" 
-                    onclick = "location.href = ('./menu_inicio.html');" 
                     value = "Salir de la Aplicación"/>
+                    </Link>
                   </div>
                   <div>
-                    <input className = "boton botonHome" type= "button" 
-                    onclick = "location.href = ('./menu_inicio.html');"/> 
+                    <Link to = '/'>
+                    <input className = "boton botonHome" type= "button" />
+                    </Link>
                   </div>
                 </div>
               </li>
             </ul>
-
-    
-        <footer class="footer"></footer>
-    </body>
     </div>
   )
 }
