@@ -55,7 +55,7 @@ function App() {
                   <GestionVentas/>
                 </Route>
                 
-                <Route path = 'admin/usuarios/editar'>
+                <Route path = '/admin/usuarios/editar'>
                   <RegistrarUsuario/>
                 </Route>
                 <Route path = '/admin/usuarios'>
