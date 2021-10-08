@@ -20,9 +20,10 @@ const GestionVentas = () => {
       <ul className = "cuerpo">
         <li>
           <div className = "contenedorBotonAgregar">
-            <input className = "botonAgregar boton" type= "button" 
-            onclick = "agregarProducto();"  
-            value = "Agregar venta" /> 
+            <Link to = '/admin/ventas/editar'>
+              <input className = "botonAgregar boton" type= "button" 
+              value = "Agregar Venta" />
+            </Link>
           </div>
         </li>
         

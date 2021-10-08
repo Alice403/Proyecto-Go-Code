@@ -19,9 +19,10 @@ const GestionUsuarios = () => {
         <ul class="cuerpo">
             <li>
                 <div className = "contenedorBotonAgregar">
-                    <input className = "botonAgregar boton" type= "button" 
-                    onclick = "agregarUsuario();"  
-                    value = "Agregar usuario" /> 
+                  <Link to = '/admin/usuarios/editar'>
+                  <input className = "botonAgregar boton" type= "button" 
+                  value = "Agregar Usuario" />
+                  </Link> 
                 </div>
             </li>
             <li>
