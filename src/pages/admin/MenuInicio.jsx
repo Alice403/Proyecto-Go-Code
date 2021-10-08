@@ -1,10 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'media/logo_cuadernia.png';
+import {Helmet} from 'react-helmet';
 
 const MenuInicio = () => {
   return (
     <div>
+      <Helmet>
+          <title>Admin Cuadernia</title>
+      </Helmet>
+
       <section className="botones">
         <div className="contenedor-logo">
           <img className="logo" src = {Logo} alt="Logo de Cuadernia"/>

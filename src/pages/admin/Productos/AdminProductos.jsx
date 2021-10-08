@@ -1,10 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'media/logo_cuadernia.png';
+import {Helmet} from "react-helmet";
 
 const AdminProductos = () => {
   return (
     <div>
+      <Helmet>
+          <title>Administrador de Productos</title>
+      </Helmet>
+      
     <header>
       <ul class = "encabezado">
         <li>

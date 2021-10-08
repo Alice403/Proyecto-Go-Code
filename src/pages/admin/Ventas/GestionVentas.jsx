@@ -1,10 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from 'media/logo_cuadernia.png';
+import { Helmet } from 'react-helmet';
 
 const GestionVentas = () => {
   return (
     <div>
+      <Helmet>
+          <title>Administrador de Ventas</title>
+      </Helmet>
+
     <header>
       <ul class = "encabezado">
         <li>
