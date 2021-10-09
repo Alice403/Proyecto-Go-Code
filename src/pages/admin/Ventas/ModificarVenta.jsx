@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'media/logo_cuadernia.png';
+import Logo from 'images/logo_cuadernia.png';
 
 const ModificarVenta = () => {
   return (

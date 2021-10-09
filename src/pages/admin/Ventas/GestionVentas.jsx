@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from 'media/logo_cuadernia.png';
+import Logo from 'images/logo_cuadernia.png';
 import { Helmet } from 'react-helmet';
 
 const GestionVentas = () => {
@@ -13,7 +13,7 @@ const GestionVentas = () => {
     <header>
       <ul class = "encabezado">
         <li>
-          <img class = "logoCuadernia" src = {logo} alt="Logo Cuadernia"></img>
+          <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
         </li>
 
         <li>
