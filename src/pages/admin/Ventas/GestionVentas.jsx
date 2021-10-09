@@ -34,19 +34,18 @@ const GestionVentas = () => {
         
         <li>
           <div class = "contenedorTabla">
-            <table class = "tabla" id="tablaProductos">
+            <table class = "tabla" id="tablaVentas">
               <tr class = "campos">
-                <th>ID de la venta</th>
-                <th>Fecha de venta</th>
-                <th>ID del producto</th>
-                <th>Descripción del producto</th>
+                <th>ID Venta</th>
+                <th>ID Producto</th>
                 <th>Cantidad</th>
-                <th>Precio unitario</th>
-                <th>Precio total</th>
+                <th>Valor unitario</th>
+                <th>Valor total</th>
+                <th>Fecha de venta</th>
                 <th>ID del cliente</th>
                 <th>Nombre del cliente</th>
                 <th>Vendedor</th>
-                <th>Estados de la venta</th>
+                <th>Estado de la venta</th>
                 <th>Edición</th>
               </tr>
             </table>

@@ -19,34 +19,27 @@ const ModificarProducto = () => {
       <div className = "contenedorFormulario">
         <ul className = "formulario">
           <li>
+            <label>Descripción del producto</label>
             <div className = "contenedorDeDatos">
-              <label> Identificador del producto
-              <input type = "number" id = "ID" required/>
-              </label>
+                <input type = "text" className = "dato" id = "descripcion" required/>
             </div>
           </li>
 
           <li>
+            <label>Valor Unitario</label>
             <div className = "contenedorDeDatos">
-              <label> Descripción del producto
-                <input type = "text" id = "descripcion" required/>
-              </label>
+                <input type = "number" min = "0" className = "dato" id = "valor_unitario" required/>
             </div>
           </li>
 
           <li>
+            <label>¿Disponible?</label>
             <div className = "contenedorDeDatos">
-              <label> Valor Unitario
-                <input type = "number" id = "valor_unitario" required/>
-              </label>
-            </div>
-          </li>
-
-          <li>
-            <div className = "contenedorDeDatos">
-              <label> ¿Disponible?
-                <input type = "text" id = "esta_disponible" required/>
-              </label>
+                <select required name="disponibilidad" id="esta_disponible">
+                      <option disabled value={0} selected>Seleccione una opción</option>
+                      <option value = "si">Sí</option>
+                      <option value = "no">No</option>
+                </select>
             </div>
           </li>
         </ul>
@@ -60,7 +53,7 @@ const ModificarProducto = () => {
         </div>
         <div>
           <Link to = '/admin/productos'>
-            <button className = "boton" type = "button">Guardar</button>
+            <input className = "boton" type = "button" value = "Guardar" />
           </Link>
         </div>
       </div>

@@ -11,99 +11,77 @@ const ModificarVenta = () => {
           <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
         </li>
         <li>
-            <div class = "tituloPaginaFormulario">EDITAR PRODUCTOS</div>
+            <div class = "tituloPaginaFormulario">EDITAR VENTAS</div>
         </li>
       </ul>
     </header>
 
-
   <div className = "contenedorFormulario">
     <ul className = "formulario">
+
+    {/* <li></li>
+    <li></li> ELEMENTOS PARA AGREGAR IDS (INMUTABLES) */}
+
+
       <li>
+        <label>Cantidad</label>
         <div class = "contenedorDeDatos">
-          <label> Identificador de la venta
-          <input type = "number" id = "IDventa" required/>
-          </label>
+          <input type = "number" min = "0" className = "dato" id = "cantidad" required/>
         </div>
       </li>
 
       <li>
+        <label> Precio unitario</label>
         <div class = "contenedorDeDatos">
-          <label> Fecha de la venta
-            <input type = "text" id = "fechaventa" required/>
-          </label>
+          <input type = "number" min = "0"  className = "dato" id = "preciou" required/>
         </div>
       </li>
 
       <li>
+        <label> Precio total</label>
         <div class = "contenedorDeDatos">
-          <label> ID del producto
-            <input type = "text" id = "IDproducto" required/>
-          </label>
+          <input type = "number" min = "0" className = "dato" id = "preciot" required/>
+          
         </div>
       </li>
 
       <li>
+        <label> Fecha de la venta</label>
         <div class = "contenedorDeDatos">
-          <label> Descripción del producto
-            <input type = "text" id = "descripcion" required/>
-          </label>
+            <input type = "date"  className = "dato" id = "fechaventa" required/>
+        </div>
+      </li>
+      
+      <li>
+        <label> ID del cliente</label>
+        <div class = "contenedorDeDatos">
+          <input type = "number"  min = "0" className = "dato" id = "IDcliente" required/>
         </div>
       </li>
 
       <li>
+        <label> Nombre del cliente</label>
         <div class = "contenedorDeDatos">
-          <label> Cantidad
-          <input type = "number" id = "cantidad" required/>
-          </label>
+            <input type = "text" className = "dato" id = "nombrecliente" required/>
         </div>
       </li>
 
       <li>
+        <label> Vendedor</label>
         <div class = "contenedorDeDatos">
-          <label> Precio unitario
-          <input type = "number" id = "preciou" required/>
-          </label>
+            <input type = "text" className = "dato" id = "vendedor" required/>
         </div>
       </li>
 
       <li>
+        <label>  Estados de la venta</label>
         <div class = "contenedorDeDatos">
-          <label> Precio total
-          <input type = "number" id = "preciot" required/>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class = "contenedorDeDatos">
-          <label> ID del cliente
-          <input type = "number" id = "IDcliente" required/>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class = "contenedorDeDatos">
-          <label> Nombre del cliente
-            <input type = "text" id = "nombrecliente" required/>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class = "contenedorDeDatos">
-          <label> Vendedor
-            <input type = "text" id = "vendedor" required/>
-          </label>
-        </div>
-      </li>
-
-      <li>
-        <div class = "contenedorDeDatos">
-          <label>  Estados de la venta
-            <input type = "text" id = "estadov" required/>
-          </label>
+            <select required name="estado_venta" id="estadov">
+              <option disabled value={0}>Seleccione una opción</option>
+              <option value = "pendiente">En proceso</option>
+              <option value = "entrega">Entregada</option>
+              <option value = "cancelada">Cancelada</option>
+            </select>
         </div>
       </li>
 
@@ -118,7 +96,7 @@ const ModificarVenta = () => {
         </div>
         <div>
           <Link to = '/admin/ventas'>
-            <button className = "boton" type = "button">Guardar</button>
+            <input className = "boton" type = "button" value = "Guardar"/>
           </Link>
         </div>
       </div>

@@ -33,10 +33,10 @@ const GestionUsuarios = () => {
                 <div className= "contenedorTabla">
                     <table className ="tabla" id="tablaUsuarios">
                         <tr className = "campos">
-                            <th scope="col">Usuario</th>
+                            <th scope="col">ID Usuario</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellidos</th>
-                            <th scope="col">Tipo de Usuario</th>
+                            <th scope="col">Tipo de usuario</th>
                             <th scope="col">Estado del usuario</th>
                             <th scope="col">Edición</th>
                         </tr>

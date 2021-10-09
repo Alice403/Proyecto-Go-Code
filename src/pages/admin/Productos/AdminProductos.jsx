@@ -35,7 +35,7 @@ const AdminProductos = () => {
           <div className = "contenedorTabla">
             <table className = "tabla" id="tablaProductos">
               <tr className = "campos">
-                <th>Identificador del producto</th>
+                <th>ID Producto</th>
                 <th>Descripción del producto</th>
                 <th>Valor Unitario</th>
                 <th>¿Disponible?</th>
