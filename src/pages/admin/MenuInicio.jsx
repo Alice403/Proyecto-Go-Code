@@ -7,32 +7,44 @@ const MenuInicio = () => {
   return (
     <div>
       <Helmet>
-          <title>Admin Cuadernia</title>
+        <title>Admin Cuadernia</title>
       </Helmet>
 
-      <section className="botones">
-        <div className="contenedor-logo">
-          <img className="logo" src = {Logo} alt="Logo de Cuadernia"/>
-        </div>
-        <ul>
-          <div className="containerMainButton">
-            <Link to='/admin/ventas'><button  className="mainButton button1">
-              Administrar ventas</button>
+      <div className="contenedorLogo">
+        <img className="logo" src = {Logo} alt="Logo de Cuadernia"/>
+      </div>
+
+      <ul className = "listaBotonesMenu">
+        <div className = "contenedorBotonesMenu">
+          <li>
+            <Link to='/admin/ventas'>
+              <input className = "botonMenu boton1" type= "button" 
+              value = "Administrar ventas"/>
             </Link>
-          </div>
-          <div className="containerMainButton">
+          </li>
+          <li>
             <Link to='/admin/productos'>
-              <button  className="mainButton button2">
-              Administrar productos</button>
+              <input className = "botonMenu boton2" type= "button" 
+              value = "Administrar productos"/>
             </Link>
-          </div>
-          <div className="containerMainButton">
-            <Link to='/admin/usuarios'><button  className="mainButton button3">
-              Administrar usuarios</button>
+          </li>
+          <li>
+            <Link to='/admin/usuarios'>
+              <input className = "botonMenu boton3" type= "button" 
+              value = "Administrar usuarios"/>
             </Link>
-          </div>
-        </ul>
-      </section>
+          </li>
+        </div>
+      </ul>
+
+      <div className="contenedorBotonSalir">
+      <Link to = '/'>
+        <i class="fas fa-home fa-3x botonSalir">
+
+        </i>
+      </Link>
+      </div>
+
     </div>
   )
 }

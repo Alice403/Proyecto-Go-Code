@@ -2,10 +2,10 @@ import 'styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Importaciones de todos los layouts (bases de pagina)
-import Privado from 'layouts/Privado';
-import Publico from 'layouts/Publico';
-import LayoutAut from 'layouts/LayoutAut';
-import LayoutMenu from 'layouts/LayoutMenu';
+// import Privado from 'layouts/Privado';
+// import Publico from 'layouts/Publico';
+// import LayoutAut from 'layouts/LayoutAut';
+// import LayoutMenu from 'layouts/LayoutMenu';
 
 //Importaciones de las páginas
 import Indice from 'pages/Indice';
@@ -38,7 +38,7 @@ function App() {
               </Switch>
             {/* </LayoutAut> */}
           </Route>
-          <Route path = {['/admin/productos', '/admin/productos/editar',
+          <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
             {/* <Privado> */} 
               <Switch>
@@ -63,16 +63,10 @@ function App() {
                   <GestionUsuarios/>
                 </Route>
               {/* </Privado> */}
-            </Switch>
-          </Route>
-          <Route path = {['/admin']}>
-            {/* </LayoutMenu> */}
-              <Switch>
                 <Route path = '/admin'>
                   <MenuInicio/>
                 </Route>
-              </Switch>
-            {/* </LayoutMenu> */}
+            </Switch>
           </Route>
           <Route path = {['/']}>
             {/* <Publico> */}

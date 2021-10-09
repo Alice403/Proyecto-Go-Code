@@ -7,7 +7,7 @@ const GestionVentas = () => {
   return (
     <div>
       <Helmet>
-          <title>Administrador de Ventas</title>
+          <title>Gestionar Ventas</title>
       </Helmet>
 
     <header>
@@ -17,7 +17,7 @@ const GestionVentas = () => {
         </li>
 
         <li>
-            <div class = "tituloPagina">MODULO DE VENTAS</div>
+            <div class = "tituloPagina">GESTIÓN DE VENTAS</div>
         </li>
       </ul>
     </header>

@@ -150,62 +150,73 @@ input{
     padding-right: 1.5em;
     padding-top: 1em;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 /* Menú Administrativo (MenuInicio) */
-.contenedor-logo{
-    background-color: red;
+.contenedorLogo{
+    /* background-color: red; */
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .logo{
-    margin: 10px;
-    width: 15em;
+    margin: 1em;
+    width: 19em;
 }
 
-.botones{
-    background-color: violet;
-    padding: 1em;
+.contenedorBotonesMenu{
+    /* background-color: #8935A1; */
+    margin:0px;
+    padding-bottom: 1em;
 }
 
-.containerMainButton {
-    display: flex;
+.contenedorBotonesMenu > li{
+    display: grid;
     justify-content: center;
+    margin:1em;
 }
 
-.mainButton{
+.listaBotonesMenu{
+    margin: 0px;
+}
+
+.botonMenu{
     /*background-color: #b4b4b4;*/
-    font-family: 'Raleway';
-    color: black;
-    width: 16em;
-    border: 0px;
-    font-weight: bolder;
-    margin: 20px;
-    background-color: #92DBCD;
-    border-color: #54b3a0;
     font-size: 1.2em;
-    padding: 15px 50px;
- }
+    width: 16em;
+    height: 3em;
+}
  
- .button1{
-     background-color: #CDF066;
- }
+.boton1{
+    background-color: #CDF066;
+    border-color: #97c216;
+}
 
- .button2{
-    background-color: #92DBCD
- }
+.boton2{
+    background-color: #92DBCD;
+    border-color: #54b3a0;;
+}
 
- .button3{
-    background-color: #8935A1
- }
- 
- 
- .mainButton:hover {
+.boton3{
+    background-color: #8935A1;
+    border-color: #67177e;
+}
+
+ .botonMenu:hover {
      cursor: pointer;
      box-shadow: 1px 1px 2px #2a7cda;
      transform: scale(1.1);
      border: solid 1px #30c1fa;
  }
+
+.contenedorBotonSalir{
+    /* background-color: #54b3a0; */
+    display: flex;
+    padding:0.5em;
+    justify-content: right;
+}
+
+.botonSalir{
+    color: black;
+}
