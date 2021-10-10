@@ -11,13 +11,13 @@ const GestionVentas = () => {
       </Helmet>
 
     <header>
-      <ul class = "encabezado">
+      <ul className = "encabezado">
         <li>
-          <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
+          <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
         </li>
 
         <li>
-            <div class = "tituloPagina">GESTIÓN DE VENTAS</div>
+            <div className = "tituloPagina">GESTIÓN DE VENTAS</div>
         </li>
       </ul>
     </header>
@@ -33,9 +33,9 @@ const GestionVentas = () => {
         </li>
         
         <li>
-          <div class = "contenedorTabla">
-            <table class = "tabla" id="tablaVentas">
-              <tr class = "campos">
+          <div className = "contenedorTabla">
+            <table className = "tabla" id="tablaVentas">
+              <tr className = "campos">
                 <th>ID Venta</th>
                 <th>ID Producto</th>
                 <th>Cantidad</th>
@@ -53,7 +53,7 @@ const GestionVentas = () => {
         </li>
 
         <li>
-          <div class = "contenedorBotonesSalir">
+          <div className = "contenedorBotonesSalir">
             <div>
               <Link to = '/admin'>
               <input className = "boton" type= "button" 
@@ -62,7 +62,7 @@ const GestionVentas = () => {
             </div>
             <div>
               <Link to = '/'>
-                <i class="fas fa-home fa-3x botonHome">
+                <i className="fas fa-home fa-3x botonHome">
                 {/* Si quieres con personita fa-house-user */}
                 </i>
               </Link>

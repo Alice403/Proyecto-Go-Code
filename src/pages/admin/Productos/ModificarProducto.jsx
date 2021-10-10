@@ -1,8 +1,45 @@
-import React from 'react';
+import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import axios from 'axios';
 
 const ModificarProducto = () => {
+  const form = useRef(null);
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const datos_formulario = new FormData(form.current);
+
+    const nuevoProducto = {};
+    datos_formulario.forEach((value, key) => {
+    nuevoProducto[key] = value;
+  });
+  console.log(nuevoProducto)
+  }
+
+  // const options = {
+  //   method: 'POST',
+  //   url: 'http://localhost:5000/productos/nuevo/',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   data: {
+  //     descripcion: nuevoProducto.descripcion_producto, 
+  //     valor_unitario: nuevoProducto.valor_unitario, 
+  //     disponibilidad: nuevoProducto.disponibilidad},
+  // };
+
+  //   await axios
+  //     .request(options)
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //       toast.success('Producto agregado con éxito');
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //       toast.error('Error creando un producto');
+  //     });
+
   return (
     <div>
       <header>
@@ -17,32 +54,42 @@ const ModificarProducto = () => {
       </header>
 
       <div className = "contenedorFormulario">
-        <ul className = "formulario">
-          <li>
-            <label>Descripción del producto</label>
-            <div className = "contenedorDeDatos">
-                <input type = "text" className = "dato" id = "descripcion" required/>
-            </div>
-          </li>
+        <form id = "formulario" ref={form} onSubmit={submitForm}> 
+          <ul className = "listaFormulario">
 
-          <li>
-            <label>Valor Unitario</label>
-            <div className = "contenedorDeDatos">
-                <input type = "number" min = "0" className = "dato" id = "valor_unitario" required/>
-            </div>
-          </li>
+        {/* <li></li> ELEMENTO PARA AGREGAR LAS ID (INMUTABLE) */}
 
-          <li>
-            <label>¿Disponible?</label>
-            <div className = "contenedorDeDatos">
-                <select required name="disponibilidad" id="esta_disponible">
-                      <option disabled value={0} selected>Seleccione una opción</option>
-                      <option value = "si">Sí</option>
-                      <option value = "no">No</option>
-                </select>
-            </div>
-          </li>
-        </ul>
+            <li>
+              <label>Descripción del producto</label>
+              <div className = "contenedorDeDatos">
+                  <input name = "descripcion_producto"
+                  type = "text" className = "dato" id = "descripcion" 
+                  required/>
+              </div>
+            </li>
+
+            <li>
+              <label>Valor Unitario</label>
+              <div className = "contenedorDeDatos">
+                  <input name = "valor_unitario"
+                  type = "number" min = "0" className = "dato" id = "valor_unitario" 
+                  required/>
+              </div>
+            </li>
+
+            <li>
+              <label>¿Disponible?</label>
+              <div className = "contenedorDeDatos">
+                  <select name="disponibilidad" 
+                  id="esta_disponible" required>
+                    <option disabled value= '' selected>Seleccione una opción</option>
+                    <option value = "si">Sí</option>
+                    <option value = "no">No</option>
+                  </select>
+              </div>
+            </li>
+          </ul>
+        </form>
       </div>
 
       <div className = "contenedorBotonesGuardar">
@@ -52,11 +99,12 @@ const ModificarProducto = () => {
           </Link>
         </div>
         <div>
-          <Link to = '/admin/productos'>
-            <input className = "boton" type = "button" value = "Guardar" />
-          </Link>
+          <button className = "boton" form = "formulario" 
+          type = 'submit'>Guardar</button>
         </div>
       </div>
+      
+      <ToastContainer position='bottom-center' autoClose={4000} />
     </div>
   )
 }

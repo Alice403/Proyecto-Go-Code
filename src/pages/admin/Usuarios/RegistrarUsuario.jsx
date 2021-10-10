@@ -1,42 +1,87 @@
-import React from 'react';
+import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import axios from 'axios';
 
 const RegistrarUsuario = () => {
+  const form = useRef(null);
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const datos_formulario = new FormData(form.current);
+
+    const nuevoUsuario = {};
+    datos_formulario.forEach((value, key) => {
+    nuevoUsuario[key] = value;
+  });
+  console.log(nuevoUsuario)
+  }
+
+  // const options = {
+  //   method: 'POST',
+  //   url: 'http://localhost:5000/usuarios/nuevo/',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   data: {
+  //     nombre: nuevoUsuario.nombre, 
+  //     apellido: nuevoUsuario.apellidos, 
+  //     estado: nuevoUsuario.tipo_usuario,
+  //     tipo: nuevoUsuario.estado_usuario},
+  // };
+
+  //   await axios
+  //     .request(options)
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //       toast.success('Usuario agregado con éxito');
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //       toast.error('Error creando un usuario');
+  //     });
+
   return (
     <div>
       <header>
-            <ul className ="encabezado">
-                <li>
-                  <img className = "logoCuadernia" src= {Logo} alt="Logo Cuadernia"/>
-                </li>
-                <li>
-                    <div className="tituloPaginaFormulario">REGISTRO DE USUARIO</div>
-                </li>
-            </ul>
-        </header>
+        <ul className ="encabezado">
+            <li>
+              <img className = "logoCuadernia" src= {Logo} alt="Logo Cuadernia"/>
+            </li>
+            <li>
+                <div className="tituloPaginaFormulario">REGISTRO DE USUARIO</div>
+            </li>
+        </ul>
+      </header>
 
         <div className = "contenedorFormulario">
-            <ul className = "formulario">
+          <form id = "formulario" ref={form} onSubmit={submitForm}> 
+            <ul className = "listaFormulario">
+
+        {/* <li></li> ELEMENTO PARA AGREGAR LAS ID (INMUTABLE) */}
+
               <li>
                 <label>Nombres</label>
                 <div className = "contenedorDeDatos">
-                  <input type = "text" className = "dato" id = "nombre" required/>
+                  <input name = "nombre"
+                  type = "text" className = "dato" id = "nombre_id" required/>
                 </div>
               </li>
         
               <li>
                 <label>Apellidos</label>
                 <div className = "contenedorDeDatos">
-                  <input type = "text" className = "dato" id = "apellido" required/>
+                  <input name = "apellidos"
+                   type = "text" className = "dato" id = "apellido_id" required/>
                 </div>
               </li>
         
               <li>
                 <label> Tipo de usuario</label>
                 <div className = "contenedorDeDatos">
-                    <select required name="tipo usuario" id="tipo">
-                      <option disabled value={0} selected>Seleccione una opción</option>
+                    <select name="tipo_usuario" 
+                    id="tipo" required>
+                      <option disabled value= '' selected>Seleccione una opción</option>
                       <option value = "vendedor">Vendedor</option>
                       <option value = "administrador">Administrador</option>
                     </select>
@@ -46,8 +91,9 @@ const RegistrarUsuario = () => {
               <li>
                 <label> Estado del usuario</label>
                 <div className = "contenedorDeDatos">
-                    <select required name="estado usuario" id="estado">
-                      <option disabled value={0} selected>Seleccione una opción</option>
+                    <select name="estado_usuario" 
+                    id="estado" required>
+                      <option disabled value= '' selected>Seleccione una opción</option>
                       <option value = "autorizado">Autorizado</option>
                       <option value = "no_autorizado">No autorizado</option>
                       <option value = "pendiente">Pendiente</option>
@@ -55,20 +101,22 @@ const RegistrarUsuario = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </form>
+        </div>
 
-          <div className = "contenedorBotonesGuardar">
+      <div className = "contenedorBotonesGuardar">
         <div>
           <Link to = '/admin/usuarios'>
             <input className = "boton" type= "button" value = "Regresar" />
           </Link>
         </div>
         <div>
-        <Link to = '/admin/usuarios'>
-            <input className = "boton" type = "button" value = "Guardar"/>
-          </Link>
+          <button className = "boton" form = "formulario" 
+          type = 'submit'>Guardar</button>
         </div>
       </div>
+
+      <ToastContainer position='bottom-center' autoClose={4000} />
     </div>
   )
 }

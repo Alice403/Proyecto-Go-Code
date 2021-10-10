@@ -11,12 +11,12 @@ const AdminProductos = () => {
       </Helmet>
       
     <header>
-      <ul class = "encabezado">
+      <ul className = "encabezado">
         <li>
-            <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
+            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
         </li>
         <li>
-            <div class = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
+            <div className = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
         </li>
       </ul>
     </header>
@@ -56,7 +56,7 @@ const AdminProductos = () => {
             </div>
             <div>
               <Link to = '/'>
-                <i class="fas fa-home fa-3x botonHome">
+                <i className="fas fa-home fa-3x botonHome">
                   {/* Si quieres con personita fa-house-user */}
                 </i>
               </Link>

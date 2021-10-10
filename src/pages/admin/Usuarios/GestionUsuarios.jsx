@@ -10,17 +10,17 @@ const GestionUsuarios = () => {
           <title>Gestionar Usuarios</title>
       </Helmet>
         <header>
-            <ul class="encabezado">
+            <ul className="encabezado">
                 <li>
-                <img class = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
+                <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
                 </li>
                 <li>
-                    <div class="tituloPagina">GESTIÓN DE USUARIOS</div>
+                    <div className="tituloPagina">GESTIÓN DE USUARIOS</div>
                 </li>
             </ul>
         </header>
 
-        <ul class="cuerpo">
+        <ul className="cuerpo">
             <li>
                 <div className = "contenedorBotonAgregar">
                   <Link to = '/admin/usuarios/editar'>
@@ -55,7 +55,7 @@ const GestionUsuarios = () => {
                   </div>
                   <div>
                     <Link to = '/'>
-                      <i class="fas fa-home fa-3x botonHome">
+                      <i className="fas fa-home fa-3x botonHome">
                       {/* Si quieres con personita fa-house-user */}
                       </i>
                     </Link>

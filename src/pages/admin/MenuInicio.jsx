@@ -39,7 +39,7 @@ const MenuInicio = () => {
 
       <div className="contenedorBotonSalir">
       <Link to = '/'>
-        <i class="fas fa-home fa-3x botonSalir">
+        <i className="fas fa-home fa-3x botonSalir">
 
         </i>
       </Link>
