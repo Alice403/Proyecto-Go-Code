@@ -3,10 +3,21 @@ import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const RegistrarUsuario = () => {
   const form = useRef(null);
+  const [borrarDatos, setBorrarDatos] = useState(false)
+
+  useEffect(() => {
+    if (borrarDatos){
+      document.getElementById("nombre_id").value = '';
+      document.getElementById("apellido_id").value = '';
+      document.getElementById("tipo").value = '';
+      document.getElementById("estado").value = '';
+      setBorrarDatos(!borrarDatos)
+    }
+  },[borrarDatos]);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -15,31 +26,32 @@ const RegistrarUsuario = () => {
     const nuevoUsuario = {};
     datos_formulario.forEach((value, key) => {
     nuevoUsuario[key] = value;
-  });
-  console.log(nuevoUsuario)
+    });
+    console.log(nuevoUsuario)
+  
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/usuarios/registro/',
+      headers: { 'Content-Type': 'application/json' },
+      data: {
+        nombre: nuevoUsuario.nombre, 
+        apellido: nuevoUsuario.apellidos, 
+        estado: nuevoUsuario.tipo_usuario,
+        tipo: nuevoUsuario.estado_usuario},
+    };
+
+  await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      setBorrarDatos(!borrarDatos)
+      toast.success('Usuario agregado con éxito');
+    })
+    .catch(function (error) {
+      console.error(error);
+      toast.error('Error creando un usuario');
+    });
   }
-
-  // const options = {
-  //   method: 'POST',
-  //   url: 'http://localhost:5000/usuarios/nuevo/',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   data: {
-  //     nombre: nuevoUsuario.nombre, 
-  //     apellido: nuevoUsuario.apellidos, 
-  //     estado: nuevoUsuario.tipo_usuario,
-  //     tipo: nuevoUsuario.estado_usuario},
-  // };
-
-  //   await axios
-  //     .request(options)
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       toast.success('Usuario agregado con éxito');
-  //     })
-  //     .catch(function (error) {
-  //       console.error(error);
-  //       toast.error('Error creando un usuario');
-  //     });
 
   return (
     <div>

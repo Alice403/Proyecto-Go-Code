@@ -3,10 +3,20 @@ import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const ModificarProducto = () => {
   const form = useRef(null);
+  const [borrarDatos, setBorrarDatos] = useState(false)
+
+  useEffect(() => {
+    if (borrarDatos){
+      document.getElementById("descripcion").value = '';
+      document.getElementById("valor").value = '';
+      document.getElementById("esta_disponible").value = '';
+      setBorrarDatos(!borrarDatos)
+    }
+  },[borrarDatos]);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -15,30 +25,31 @@ const ModificarProducto = () => {
     const nuevoProducto = {};
     datos_formulario.forEach((value, key) => {
     nuevoProducto[key] = value;
-  });
-  console.log(nuevoProducto)
+    });
+    console.log(nuevoProducto)
+
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/productos/nuevo/', //CAMBIAR
+      headers: { 'Content-Type': 'application/json' },
+      data: {
+        descripcion_producto: nuevoProducto.descripcion_producto, 
+        valor_unitario: nuevoProducto.valor_unitario, 
+        disponibilidad: nuevoProducto.disponibilidad},
+    };
+
+    await axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        setBorrarDatos(!borrarDatos)
+        toast.success('Producto agregado con éxito');
+      })
+      .catch(function (error) {
+        console.error(error);
+        toast.error('Error creando un producto');
+      });
   }
-
-  // const options = {
-  //   method: 'POST',
-  //   url: 'http://localhost:5000/productos/nuevo/',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   data: {
-  //     descripcion: nuevoProducto.descripcion_producto, 
-  //     valor_unitario: nuevoProducto.valor_unitario, 
-  //     disponibilidad: nuevoProducto.disponibilidad},
-  // };
-
-  //   await axios
-  //     .request(options)
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       toast.success('Producto agregado con éxito');
-  //     })
-  //     .catch(function (error) {
-  //       console.error(error);
-  //       toast.error('Error creando un producto');
-  //     });
 
   return (
     <div>
@@ -54,7 +65,7 @@ const ModificarProducto = () => {
       </header>
 
       <div className = "contenedorFormulario">
-        <form id = "formulario" ref={form} onSubmit={submitForm}> 
+        <form id = "formulario" ref = {form} onSubmit={submitForm}> 
           <ul className = "listaFormulario">
 
         {/* <li></li> ELEMENTO PARA AGREGAR LAS ID (INMUTABLE) */}
@@ -72,7 +83,7 @@ const ModificarProducto = () => {
               <label>Valor Unitario</label>
               <div className = "contenedorDeDatos">
                   <input name = "valor_unitario"
-                  type = "number" min = "0" className = "dato" id = "valor_unitario" 
+                  type = "number" min = "0" className = "dato" id = "valor" 
                   required/>
               </div>
             </li>
@@ -107,6 +118,6 @@ const ModificarProducto = () => {
       <ToastContainer position='bottom-center' autoClose={4000} />
     </div>
   )
-}
+};
 
 export default ModificarProducto

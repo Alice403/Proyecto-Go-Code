@@ -3,10 +3,25 @@ import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import axios from 'axios';
+import axios from 'axios';
 
 const ModificarVenta = () => {
   const form = useRef(null);
+  const [borrarDatos, setBorrarDatos] = useState(false)
+
+  useEffect(() => {
+    if (borrarDatos){
+      document.getElementById("cantidad").value = '';
+      document.getElementById("preciou").value = '';
+      document.getElementById("preciot").value = '';
+      document.getElementById("fechaventa").value = '';
+      document.getElementById("IDcliente").value = '';
+      document.getElementById("nombrecliente").value = '';
+      document.getElementById("vendedor").value = '';
+      document.getElementById("estadov").value = '';
+      setBorrarDatos(!borrarDatos);
+    }
+  },[borrarDatos]);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -15,36 +30,36 @@ const ModificarVenta = () => {
     const nuevaVenta = {};
     datos_formulario.forEach((value, key) => {
     nuevaVenta[key] = value;
-  });
-  console.log(nuevaVenta)
-  }
-
-  // const options = {
-  //   method: 'POST',
-  //   url: 'http://localhost:5000/ventas/nueva/',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   data: {
-  //     cantidad: nuevaVenta.cantidad, 
-  //     valor_unitario: nuevaVenta.valor_unitario, 
-  //     valor_total: nuevaVenta.valor_total,
-  //     fecha_venta: nuevaVenta.fecha_venta,
-  //     id_cliente: nuevaVenta.id_cliente,
-  //     nombre_cliente: nuevaVenta.nombre_cliente,
-  //     vendedor: nuevaVenta.vendedor,
-  //     estado_venta: nuevaVenta.estado_venta},
-  // };
-
- //   await axios
- //     .request(options)
- //     .then(function (response) {
- //       console.log(response.data);
- //       toast.success('Venta agregada con éxito');
- //     })
- //     .catch(function (error) {
- //       console.error(error);
- //       toast.error('Error creando una venta');
- //     });
+    });
+    console.log(nuevaVenta)
   
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/ventas/nueva/',
+      headers: { 'Content-Type': 'application/json' },
+      data: {
+        cantidad: nuevaVenta.cantidad, 
+        valor_unitario: nuevaVenta.valor_unitario, 
+        valor_total: nuevaVenta.valor_total,
+        fecha_venta: nuevaVenta.fecha_venta,
+        id_cliente: nuevaVenta.id_cliente,
+        nombre_cliente: nuevaVenta.nombre_cliente,
+        vendedor: nuevaVenta.vendedor,
+        estado_venta: nuevaVenta.estado_venta},
+    };
+
+  await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      setBorrarDatos(!borrarDatos);
+      toast.success('Venta agregada con éxito');
+    })
+    .catch(function (error) {
+      console.error(error);
+      toast.error('Error creando una venta');
+    });
+  }
   return (
     <div>
       <header>
@@ -126,7 +141,7 @@ const ModificarVenta = () => {
             <div className = "contenedorDeDatos">
                 <select name="estado_venta"
                   id="estadov" required>
-                  <option disabled value= '' selected>Seleccione una opción</option>
+                  <option disabled value = '' selected>Seleccione una opción</option>
                   <option value = "pendiente">En proceso</option>
                   <option value = "entrega">Entregada</option>
                   <option value = "cancelada">Cancelada</option>

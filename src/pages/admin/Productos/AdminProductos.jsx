@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import {Helmet} from "react-helmet";
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 const AdminProductos = () => {
   return (
@@ -34,13 +36,18 @@ const AdminProductos = () => {
         <li>
           <div className = "contenedorTabla">
             <table className = "tabla" id="tablaProductos">
-              <tr className = "campos">
-                <th>ID Producto</th>
-                <th>Descripción del producto</th>
-                <th>Valor Unitario</th>
-                <th>¿Disponible?</th>
-                <th>Edición</th>
-              </tr>
+              <thead>
+                <tr className = "campos">
+                  <th>ID Producto</th>
+                  <th>Descripción del producto</th>
+                  <th>Valor Unitario</th>
+                  <th>¿Disponible?</th>
+                  <th>Edición</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
             </table>
 
           </div>
