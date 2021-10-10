@@ -1,9 +1,12 @@
-import React from 'react';
+import {React, useEffect,useState,useRef} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 const GestionUsuarios = () => {
+  const [usuarios, setUsuarios] = useState([]);
   return (
     <div>
       <Helmet>
@@ -31,18 +34,28 @@ const GestionUsuarios = () => {
             </li>
             <li>
                 <div className= "contenedorTabla">
-                    <table className ="tabla" id="tablaUsuarios">
-                        <tr className = "campos">
-                            <th scope="col">ID Usuario</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Tipo de usuario</th>
-                            <th scope="col">Estado del usuario</th>
-                            <th scope="col">Edición</th>
-                        </tr>
-                        <tbody></tbody>
-                    </table>
-                </div>
+                  <table className ="tabla" id="tablaUsuarios">
+                    <thead className = "campos">
+                      <th scope="col">ID Usuario</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Apellidos</th>
+                      <th scope="col">Tipo de usuario</th>
+                      <th scope="col">Estado del usuario</th>
+                      <th scope="col">Edición</th>
+                    </thead>
+                    <tbody>
+                      {/* {usuariosFiltrados.map((vehiculo) => {
+                        return (
+                          <FilaVehiculo
+                            key={nanoid()}
+                            vehiculo={vehiculo}
+                            setEjecutarConsulta={setEjecutarConsulta}
+                          />
+                        );
+                      })} */}
+                    </tbody>
+                  </table>
+              </div>
             </li>
             
             <li>

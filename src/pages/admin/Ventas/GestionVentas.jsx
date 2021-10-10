@@ -1,9 +1,12 @@
-import React from 'react';
+import {React, useEffect,useState,useRef} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import { Helmet } from 'react-helmet';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 const GestionVentas = () => {
+  const [ventas, setVentas] = useState([]);
   return (
     <div>
       <Helmet>
@@ -35,7 +38,7 @@ const GestionVentas = () => {
         <li>
           <div className = "contenedorTabla">
             <table className = "tabla" id="tablaVentas">
-              <tr className = "campos">
+              <thead className = "campos">
                 <th>ID Venta</th>
                 <th>ID Producto</th>
                 <th>Cantidad</th>
@@ -47,7 +50,18 @@ const GestionVentas = () => {
                 <th>Vendedor</th>
                 <th>Estado de la venta</th>
                 <th>Edición</th>
-              </tr>
+              </thead>
+              <tbody>
+                {/* {ventasFiltrados.map((vehiculo) => {
+                  return (
+                    <FilaVehiculo
+                      key={nanoid()}
+                      vehiculo={vehiculo}
+                      setEjecutarConsulta={setEjecutarConsulta}
+                    />
+                  );
+                })} */}
+              </tbody>
             </table>
           </div>
         </li>
