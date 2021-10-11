@@ -198,29 +198,39 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           <td>{infoNuevoUsuario._id}</td>
           <td>
             <input
-              className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+              className=''
               type='text'
-              value={infoNuevoUsuario.name}
-              onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, name: e.target.value })}
+              value={infoNuevoUsuario.nombre}
+              onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, nombre: e.target.value })}
             />
           </td>
           <td>
             <input
-              className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+              className=''
               type='text'
-              value={infoNuevoUsuario.brand}
+              value={infoNuevoUsuario.apellidos}
               onChange={(e) =>
-                setInfoNuevoUsuario({ ...infoNuevoUsuario, brand: e.target.value })
+                setInfoNuevoUsuario({ ...infoNuevoUsuario, apellidos: e.target.value })
               }
             />
           </td>
           <td>
             <input
-              className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+              className=''
               type='text'
-              value={infoNuevoUsuario.model}
+              value={infoNuevoUsuario.tipo_usuario}
               onChange={(e) =>
-                setInfoNuevoUsuario({ ...infoNuevoUsuario, model: e.target.value })
+                setInfoNuevoUsuario({ ...infoNuevoUsuario, tipo_usuario: e.target.value })
+              }
+            />
+          </td>
+          <td>
+            <input
+              className=''
+              type='text'
+              value={infoNuevoUsuario.estado_usuario}
+              onChange={(e) =>
+                setInfoNuevoUsuario({ ...infoNuevoUsuario, estado_usuario: e.target.value })
               }
             />
           </td>
@@ -228,9 +238,10 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
       ) : (
         <>
           <td>{usuario._id.slice(20)}</td>
-          <td>{usuario.name}</td>
-          <td>{usuario.brand}</td>
-          <td>{usuario.model}</td>
+          <td>{usuario.nombre}</td>
+          <td>{usuario.apellidos}</td>
+          <td>{usuario.tipo_usuario}</td>
+          <td>{usuario.estado_usuario}</td>
         </>
       )}
       <td>
