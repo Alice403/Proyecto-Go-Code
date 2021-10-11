@@ -30,7 +30,7 @@ const ModificarProducto = () => {
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/productos/nuevo/', //CAMBIAR
+      url: 'http://localhost:5000/productos/nuevo/',
       headers: { 'Content-Type': 'application/json' },
       data: {
         descripcion_producto: nuevoProducto.descripcion_producto, 

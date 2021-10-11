@@ -116,14 +116,14 @@ const Tabla = ({ listaUsuarios, setEjecutarConsulta }) => {
         <input
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
-          placeholder='Buscar'
+          placeholder='Buscar usuario'
           className='buscador' //CSS
         />
       </div>
-      <div className='oculto'>
+      <div className=''>
         {usuariosFiltrados.map((el) => {
           return (
-            <div className=''>
+            <div className='oculto'>
               <span>{el.nombre}</span>
               <span>{el.apellidos}</span>
               <span>{el.tipo_usuario}</span>
@@ -195,19 +195,19 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
     <tr>
       {edit ? (
         <>
-          <td>{infoNuevoUsuario._id}</td>
+          <td>{infoNuevoUsuario._id.slice(15)}</td>
           <td>
             <input
-              className=''
-              type='text'
+              className = 'dato_editar nombre'
+              type= 'text'
               value={infoNuevoUsuario.nombre}
               onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, nombre: e.target.value })}
             />
           </td>
           <td>
             <input
-              className=''
-              type='text'
+              className = 'dato_editar apellido'
+              type= 'text'
               value={infoNuevoUsuario.apellidos}
               onChange={(e) =>
                 setInfoNuevoUsuario({ ...infoNuevoUsuario, apellidos: e.target.value })
@@ -215,29 +215,30 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
             />
           </td>
           <td>
-            <input
-              className=''
-              type='text'
-              value={infoNuevoUsuario.tipo_usuario}
-              onChange={(e) =>
+            <select
+              className = 'dato_editar'
+                onChange={(e) =>
                 setInfoNuevoUsuario({ ...infoNuevoUsuario, tipo_usuario: e.target.value })
-              }
-            />
+                }>
+              <option value = "Vendedor">Vendedor</option>
+              <option value = "Administrador">Administrador</option>
+            </select>
           </td>
           <td>
-            <input
-              className=''
-              type='text'
-              value={infoNuevoUsuario.estado_usuario}
-              onChange={(e) =>
-                setInfoNuevoUsuario({ ...infoNuevoUsuario, estado_usuario: e.target.value })
-              }
-            />
+            <select 
+              className='dato_editar' 
+                onChange={(e) =>
+                  setInfoNuevoUsuario({ ...infoNuevoUsuario, estado_usuario: e.target.value })
+                }>
+              <option value = "Autorizado">Autorizado</option>
+              <option value = "No Autorizado">No autorizado</option>
+              <option value = "Pendiente">Pendiente</option>
+            </select>
           </td>
         </>
       ) : (
         <>
-          <td>{usuario._id.slice(20)}</td>
+          <td>{usuario._id.slice(15)}</td>
           <td>{usuario.nombre}</td>
           <td>{usuario.apellidos}</td>
           <td>{usuario.tipo_usuario}</td>
@@ -245,34 +246,34 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
         </>
       )}
       <td>
-      <div className=''>
+      <div className='contenedorEdicion'>
         {edit ? (
           <>
             <Tooltip title='Confirmar Edición' arrow>
               <i
                 onClick={() => actualizarUsuario()}
-                className=''
+                className='fas fa-check botonConfirmar'
               />
             </Tooltip>
             <Tooltip title='Cancelar edición' arrow>
               <i
                 onClick={() => setEdit(!edit)}
-                className=''
+                className='fas fa-ban botonCancelar'
               />
             </Tooltip>
           </>
         ) : (
           <>
-            <Tooltip title='Editar Vehículo' arrow>
+            <Tooltip title='Editar usuario' arrow>
               <i
                 onClick={() => setEdit(!edit)}
-                className='fas fa-pencil-alt'
+                className='fas fa-pencil-alt botonEditar'
               />
             </Tooltip>
-            <Tooltip title='Eliminar Vehículo' arrow>
+            <Tooltip title='Eliminar usuario' arrow>
               <i
                 onClick={() => setOpenDialog(true)}
-                className='fas fa-trash'
+                className='fas fa-trash botonEliminar'
               />
             </Tooltip>
           </>
@@ -283,17 +284,15 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
             <h1 className=''>
               ¿Está seguro de querer eliminar el usuario?
             </h1>
-            <div className=''>
+            <div className='contenedorConfirmaciones'>
               <button
                 onClick={() => eliminarUsuario()}
-                className=''
-              >
+                className='botonConfirmarEliminar'>
                 Sí
               </button>
               <button
                 onClick={() => setOpenDialog(false)}
-                className=''
-              >
+                className='botonCancelarEliminar'>
                 No
               </button>
             </div>

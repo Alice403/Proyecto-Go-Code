@@ -31,26 +31,26 @@ const RegistrarUsuario = () => {
   
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/usuarios/registro/',
+      url: 'http://localhost:5000/usuarios/registro',
       headers: { 'Content-Type': 'application/json' },
       data: {
         nombre: nuevoUsuario.nombre, 
-        apellido: nuevoUsuario.apellidos, 
-        estado: nuevoUsuario.tipo_usuario,
-        tipo: nuevoUsuario.estado_usuario},
+        apellidos: nuevoUsuario.apellidos, 
+        tipo_usuario: nuevoUsuario.tipo_usuario,
+        estado_usuario: nuevoUsuario.estado_usuario},
     };
 
-  await axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-      setBorrarDatos(!borrarDatos)
-      toast.success('Usuario agregado con éxito');
-    })
-    .catch(function (error) {
-      console.error(error);
-      toast.error('Error creando un usuario');
-    });
+    await axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        setBorrarDatos(!borrarDatos)
+        toast.success('Usuario agregado con éxito');
+      })
+      .catch(function (error) {
+        console.error(error);
+        toast.error('Error creando un usuario');
+      });
   }
 
   return (
@@ -94,8 +94,8 @@ const RegistrarUsuario = () => {
                     <select name="tipo_usuario" 
                     id="tipo" required>
                       <option disabled value= '' selected>Seleccione una opción</option>
-                      <option value = "vendedor">Vendedor</option>
-                      <option value = "administrador">Administrador</option>
+                      <option value = "Vendedor">Vendedor</option>
+                      <option value = "Administrador">Administrador</option>
                     </select>
                 </div>
               </li>
@@ -106,9 +106,9 @@ const RegistrarUsuario = () => {
                     <select name="estado_usuario" 
                     id="estado" required>
                       <option disabled value= '' selected>Seleccione una opción</option>
-                      <option value = "autorizado">Autorizado</option>
-                      <option value = "no_autorizado">No autorizado</option>
-                      <option value = "pendiente">Pendiente</option>
+                      <option value = "Autorizado">Autorizado</option>
+                      <option value = "No Autorizado">No autorizado</option>
+                      <option value = "Pendiente">Pendiente</option>
                     </select>
                 </div>
               </li>

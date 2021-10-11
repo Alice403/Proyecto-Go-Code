@@ -14,6 +14,10 @@ button,input{
     font-family: 'Raleway';
 }
 
+.oculto{
+    display:none;
+}
+
 /* Características de los módulos administrativos */
 /*Header*/
 .encabezado{
@@ -103,14 +107,42 @@ td{
     padding:0.5em;
 }
 
-.botonEditar{
-    all:unset;
+.contenedorEdicion{
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 
-.botonEditar:hover{
+
+
+.botonCancelar,.botonConfirmar,
+    .botonEditar,.botonEliminar:hover{
     cursor:pointer;
 }
 
+.contenedorConfirmaciones >button{
+    display: flex;
+    justify-content: center;
+}
+
+.botonConfirmar{
+    color: rgb(28, 144, 28);
+}
+
+.botonCancelar{
+    color: rgb(200, 36, 36)
+}
+
+.buscador{
+    margin-top:1.5em;
+    padding:1em;
+    font-size: 1em;
+    width: 97%; /*CORREGIR*/
+    object-fit: contain;
+}
+
+/*Parte inferior de la página principal*/
 .contenedorBotonesSalir{
     /* background-color: #fa0606; */
     padding:0.5em;
@@ -125,9 +157,6 @@ td{
     color: black;
     justify-content: center;
 }
-
-/*Pie de Página*/
-
 
 /* Páginas de formularios*/
 .listaFormulario{
@@ -151,6 +180,11 @@ label{ /* Cuidado */
 .dato{
     width: 15em;
     height: 2em;
+}
+
+.datoEditar{
+    width: 9em;
+    height: 1.5em;
 }
 
 select{
