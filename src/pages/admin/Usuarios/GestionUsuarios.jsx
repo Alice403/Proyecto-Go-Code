@@ -217,6 +217,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           <td>
             <select
               className = 'dato_editar'
+                value={infoNuevoUsuario.tipo_usuario}
                 onChange={(e) =>
                 setInfoNuevoUsuario({ ...infoNuevoUsuario, tipo_usuario: e.target.value })
                 }>
@@ -226,7 +227,8 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           </td>
           <td>
             <select 
-              className='dato_editar' 
+              className='dato_editar'
+              value={infoNuevoUsuario.estado_usuario}
                 onChange={(e) =>
                   setInfoNuevoUsuario({ ...infoNuevoUsuario, estado_usuario: e.target.value })
                 }>
