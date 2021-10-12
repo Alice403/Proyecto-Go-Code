@@ -150,9 +150,9 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
   const actualizarUsuario = async () => {
     const options = {
       method: 'PATCH',
-      url: `http://localhost:5000/usuario/${usuario._id}/`,
+      url: 'http://localhost:5000/usuarios/editar/', 
       headers: { 'Content-Type': 'application/json' },
-      data: { ...infoNuevoUsuario },
+      data: { ...infoNuevoUsuario},
     };
     
   await axios
