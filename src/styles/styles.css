@@ -276,3 +276,32 @@ input[type='text'], input[type = 'number'], input[type='date'],select{
 .botonSalir{
     color: black;
 }
+
+.ventanaEliminar{
+    text-align: center;
+}
+.contenedorEliminar{
+    display: flex;
+    justify-content: center;
+}
+
+.botonConfirmarEliminar{
+    margin-right: 3em ;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    margin-bottom: 3em;
+    padding-right : 3em;
+    padding-left: 3em ;
+}
+
+.botonCancelarEliminar{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    margin-bottom: 3em;
+    padding-right : 3em;
+    padding-left: 3em ;
+}

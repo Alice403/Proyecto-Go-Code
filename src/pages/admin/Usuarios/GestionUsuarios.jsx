@@ -281,10 +281,10 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
       </div>
         <Dialog open={openDialog}>
           <div className=''>
-            <h1 className=''>
+            <h1 className='ventanaEliminar'>
               ¿Está seguro de querer eliminar el usuario?
             </h1>
-            <div className='contenedorConfirmaciones'>
+            <div className='contenedorEliminar'>
               <button
                 onClick={() => eliminarUsuario()}
                 className='botonConfirmarEliminar'>
