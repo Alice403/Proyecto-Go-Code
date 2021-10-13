@@ -1,0 +1,307 @@
+/* Características generales de la página (layouts) */
+body{
+    margin: 0px;
+    background-color: rgb(190, 245, 227);
+  }
+
+ul{
+    padding: 0px;
+    margin: 10px;
+    list-style: none;
+}
+
+button,input{
+    font-family: 'Raleway';
+}
+
+.oculto{
+    display:none;
+}
+
+/* Características de los módulos administrativos */
+/*Header*/
+.encabezado{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.encabezado > li{
+    display: flex;
+    align-items: center;
+}
+
+.logoCuadernia{
+    object-fit:cover;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+
+.tituloPagina,.tituloPaginaFormulario{
+    font-size: 4em;
+    font-family: 'Raleway';
+    color: #0c0707ab;
+    text-align: center;
+    padding:15px;
+}
+
+/*Cuerpo*/
+.cuerpo{
+    font-family: 'Raleway';
+    display:contents;
+    justify-content: space-between;
+}
+
+.cuerpo > li{
+    display: grid;
+}
+
+.boton{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.contenedorBotonAgregar{
+    /*background-color: #fa0606;*/
+    padding:0.5em;
+    padding-top:0;
+    padding-right: 2.5em;
+}
+
+.botonAgregar{
+    float:right;
+}
+
+.tabla{
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    border-collapse:collapse;
+    background-color: #FFFFFF;
+    table-layout: fixed;
+}
+
+.contenedorTabla{
+    /*background-color: #d5fa06ad;*/
+    padding:0.5em;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+th,td,table{
+    border: 0.1em solid black;
+    border-collapse: collapse;
+}
+
+th{
+    padding:0.8em;
+}
+
+td{
+    padding:0.5em;
+}
+
+.contenedorEdicion{
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+
+
+.botonCancelar,.botonConfirmar,
+    .botonEditar,.botonEliminar:hover{
+    cursor:pointer;
+}
+
+.contenedorConfirmaciones >button{
+    display: flex;
+    justify-content: center;
+}
+
+.botonConfirmar{
+    color: rgb(28, 144, 28);
+}
+
+.botonCancelar{
+    color: rgb(200, 36, 36)
+}
+
+.buscador{
+    margin-top:1.5em;
+    padding:1em;
+    font-size: 1em;
+    width: 97%; /*CORREGIR*/
+    object-fit: contain;
+}
+
+/*Parte inferior de la página principal*/
+.contenedorBotonesSalir{
+    /* background-color: #fa0606; */
+    padding:0.5em;
+    padding-left: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonHome{
+    padding: 0.1em;
+    color: black;
+    justify-content: center;
+}
+
+/* Páginas de formularios*/
+.listaFormulario{
+    font-family: 'Raleway';
+    justify-content: center;
+    padding:1em;
+    display: grid;
+}
+
+.contenedorDeDatos{
+    padding-top: 0.3em;
+    margin-bottom: 0.8em;
+    flex-direction: column;
+    display:flex;
+}
+
+label{ /* Cuidado */
+    font-size: 17px;
+}
+
+.dato{
+    width: 15em;
+    height: 2em;
+}
+
+.datoEditar{
+    width: 9em;
+    height: 1.5em;
+}
+
+select{
+    padding: 0.5em;
+}
+
+input[type='date']{
+    padding:0.12em;
+}
+
+input[type='text'], input[type = 'number'], input[type='date'],select{
+    font-size: 18px;
+    font-family: 'Arial';
+}
+
+.contenedorBotonesGuardar{
+    /* background-color: #7006fa; */
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Menú Administrativo (MenuInicio) */
+.contenedorLogo{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    margin: 1em;
+    width: 19em;
+}
+
+.contenedorBotonesMenu{
+    /* background-color: #8935A1; */
+    margin:0px;
+    padding-bottom: 1em;
+}
+
+.contenedorBotonesMenu > li{
+    display: grid;
+    justify-content: center;
+    margin:1em;
+}
+
+.listaBotonesMenu{
+    margin: 0px;
+}
+
+.botonMenu{
+    /*background-color: #b4b4b4;*/
+    font-size: 1.2em;
+    width: 16em;
+    height: 3em;
+}
+ 
+.boton1{
+    background-color: #CDF066;
+    border-color: #97c216;
+}
+
+.boton2{
+    background-color: #92DBCD;
+    border-color: #54b3a0;;
+}
+
+.boton3{
+    background-color: #8935A1;
+    border-color: #67177e;
+}
+
+ .botonMenu:hover {
+     cursor: pointer;
+     box-shadow: 1px 1px 2px #2a7cda;
+     transform: scale(1.1);
+     border: solid 1px #30c1fa;
+ }
+
+.contenedorBotonSalir{
+    /* background-color: #54b3a0; */
+    display: flex;
+    padding:0.5em;
+    justify-content: right;
+}
+
+.botonSalir{
+    color: black;
+}
+
+.ventanaEliminar{
+    text-align: center;
+}
+.contenedorEliminar{
+    display: flex;
+    justify-content: center;
+}
+
+.botonConfirmarEliminar{
+    margin-right: 3em ;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    margin-bottom: 3em;
+    padding-right : 3em;
+    padding-left: 3em ;
+}
+
+.botonCancelarEliminar{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    margin-bottom: 3em;
+    padding-right : 3em;
+    padding-left: 3em ;
+}
