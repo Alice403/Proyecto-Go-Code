@@ -107,7 +107,7 @@ const RegistrarUsuario = () => {
                     id="estado" required>
                       <option disabled value= '' selected>Seleccione una opción</option>
                       <option value = "Autorizado">Autorizado</option>
-                      <option value = "No Autorizado">No autorizado</option>
+                      <option value = "No autorizado">No autorizado</option>
                       <option value = "Pendiente">Pendiente</option>
                     </select>
                 </div>

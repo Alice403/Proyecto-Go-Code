@@ -94,8 +94,8 @@ const ModificarProducto = () => {
                   <select name="disponibilidad" 
                   id="esta_disponible" required>
                     <option disabled value= '' selected>Seleccione una opción</option>
-                    <option value = "si">Sí</option>
-                    <option value = "no">No</option>
+                    <option value = "Sí">Sí</option>
+                    <option value = "No">No</option>
                   </select>
               </div>
             </li>

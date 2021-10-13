@@ -1,10 +1,17 @@
 import React from 'react'
-import Logo from 'images/logo_cuadernia.png';
+import { Link } from 'react-router-dom'
 
 const Indice = () => {
   return (
     <div>
         Página principal
+        <br>
+        </br>
+          <Link to = '/admin'>
+        <button className = 'boton'>
+          Ir al panel administrativo
+        </button>
+          </Link>
     </div>
   )
 }

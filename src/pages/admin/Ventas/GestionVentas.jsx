@@ -1,12 +1,12 @@
-import {React, useEffect,useState,useRef} from 'react';
+import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import { Helmet } from 'react-helmet';
-import { nanoid } from 'nanoid';
-import axios from 'axios';
 import {obtenerVentas} from 'utils/get';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 
 const GestionVentas = () => {
@@ -287,12 +287,13 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
           <td>
             <select
               className = 'dato_editar'
+              value={infoNuevaVenta.estado_venta}
                 onChange={(e) =>
                 setInfoNuevaVenta({ ...infoNuevaVenta, estado_venta: e.target.value })
                 }>
-              <option value = "pendiente">En proceso</option>
-              <option value = "entrega">Entregada</option>
-              <option value = "cancelada">Cancelada</option>
+              <option value = "En proceso">En proceso</option>
+              <option value = "Entregada">Entregada</option>
+              <option value = "Cancelada">Cancelada</option>
             </select>
           </td>
         </>

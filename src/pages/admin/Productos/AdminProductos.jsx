@@ -1,14 +1,12 @@
-import {React, useEffect,useState,useRef} from 'react';
+import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
-import {nanoid} from 'nanoid';
-import axios from 'axios';
 import {obtenerProductos} from 'utils/get';
 import Logo from 'images/logo_cuadernia.png';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
-// import { nanoid } from 'nanoid';
-// import axios from 'axios';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -228,8 +226,8 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
                 onChange={(e) =>
                 setInfoNuevoProducto({ ...infoNuevoProducto, disponibilidad: e.target.value })
                 }>
-              <option value = "si">Sí</option>
-              <option value = "no">No</option>
+              <option value = "Sí">Sí</option>
+              <option value = "No">No</option>
             </select>
           </td>
           
