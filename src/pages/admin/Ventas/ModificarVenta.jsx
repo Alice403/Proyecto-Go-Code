@@ -142,9 +142,9 @@ const ModificarVenta = () => {
                 <select name="estado_venta"
                   id="estadov" required>
                   <option disabled value = '' selected>Seleccione una opción</option>
-                  <option value = "pendiente">En proceso</option>
-                  <option value = "entrega">Entregada</option>
-                  <option value = "cancelada">Cancelada</option>
+                  <option value = "En proceso">En proceso</option>
+                  <option value = "Entregada">Entregada</option>
+                  <option value = "Cancelada">Cancelada</option>
                 </select>
               </div>
             </li>

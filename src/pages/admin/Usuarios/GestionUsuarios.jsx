@@ -1,4 +1,4 @@
-import {React, useEffect,useState,useRef} from 'react';
+import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {nanoid} from 'nanoid';
@@ -7,7 +7,6 @@ import {obtenerUsuarios} from 'utils/get';
 import Logo from 'images/logo_cuadernia.png';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
-// import {Header} from 'src/components/Header.jsx';
 
 const GestionUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
