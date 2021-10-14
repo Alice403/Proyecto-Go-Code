@@ -45,7 +45,7 @@ function App() {
           </Route>
           <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
-            <privado> 
+            <privado>
               <Switch>
                 <Route path = '/admin/productos/editar'>
                   <ModificarProducto/>
