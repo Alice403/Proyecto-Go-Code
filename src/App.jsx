@@ -9,20 +9,25 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Importaciones de las páginas
 import Indice from 'pages/Indice';
-
+import privado from 'layouts/privado';
 import Autenticacion from 'pages/auth/Autenticacion';
 import Registro from 'pages/auth/Registro';
 import MenuInicio from 'pages/admin/MenuInicio';
-
 import AdminProductos from 'pages/admin/Productos/AdminProductos';
 import ModificarProducto from 'pages/admin/Productos/ModificarProducto';
 import GestionVentas from 'pages/admin/Ventas/GestionVentas';
 import ModificarVenta from 'pages/admin/Ventas/ModificarVenta';
 import GestionUsuarios from 'pages/admin/Usuarios/GestionUsuarios';
 import RegistrarUsuario from 'pages/admin/Usuarios/RegistrarUsuario';
+import {Auth0Provider} from '@auth0/auth0-react';
 
 function App() {
   return (
+  <Auth0Provider
+  domain = 'go-code.us.auth0.com'
+  clientId='hDmKjJ6hxt8cer7N0tYl6vMN02ZJ8ord'
+  redirectUri={window.location.origin}>
+
     <div className='App'>
       <Router>
         <Switch> 
@@ -40,7 +45,7 @@ function App() {
           </Route>
           <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
-            {/* <Privado> */} 
+            <privado> 
               <Switch>
                 <Route path = '/admin/productos/editar'>
                   <ModificarProducto/>
@@ -61,13 +66,15 @@ function App() {
                 </Route>
                 <Route path = '/admin/usuarios'>
                   <GestionUsuarios/>
-                </Route>
-              {/* </Privado> */}
+                </Route> 
                 <Route path = '/admin'>
                   <MenuInicio/>
                 </Route>
-            </Switch>
+              </Switch>
+            </privado>
           </Route>
+        
+
           <Route path = {['/']}>
             {/* <Publico> */}
             <Switch>
@@ -80,6 +87,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+  </Auth0Provider>
   );
 }
 

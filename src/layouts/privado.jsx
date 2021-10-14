@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import PrivateRoute from 'components/PrivateRoute';
 
-const Privado = () => {
+const privado = ({ children }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <PrivateRoute>
+      <main>
+            {children}
+      </main>
+    </PrivateRoute>
+  );
+};
 
-export default Privado
+export default privado;
