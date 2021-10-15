@@ -25,7 +25,8 @@ function App() {
   <Auth0Provider
   domain = 'go-code.us.auth0.com'
   clientId='hDmKjJ6hxt8cer7N0tYl6vMN02ZJ8ord'
-  redirectUri={window.location.origin}>
+  redirectUri= 'http://localhost:3000/admin'
+  >
 
     <div className='App'>
       <Router>
