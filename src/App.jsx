@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Titulos from 'components/Titulos';
 
 //Importaciones de todos los layouts (bases de pagina)
-import Privado from 'layouts/privado';
-import Publico from 'layouts/publico';
+import Privado from 'layouts/Privado';
+import Publico from 'layouts/Publico';
 import PrivateRoute from 'components/PrivateRoute';
 // import LayoutAut from 'layouts/LayoutAut';
 // import LayoutMenu from 'layouts/LayoutMenu';

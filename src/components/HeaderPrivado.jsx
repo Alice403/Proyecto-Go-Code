@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from 'images/logo_cuadernia.png';
 
-const HeaderPrivado = ({Titulo}) => {
+const HeaderPrivado = ({titulo}) => {
   return (
       <header>
         <ul className = "encabezado">
@@ -9,7 +9,7 @@ const HeaderPrivado = ({Titulo}) => {
               <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
           </li>
           <li>
-              <div className = "tituloPagina">{Titulo}</div>
+              <div className = "tituloPagina">{titulo}</div>
           </li>
         </ul>
       </header>

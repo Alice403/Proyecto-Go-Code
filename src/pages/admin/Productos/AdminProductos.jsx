@@ -6,24 +6,23 @@ import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
-import HeaderPrivado from 'components/HeaderPrivado';
 
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+  const [titulo, setTitulo] = useState('Administrador de Producdastos')
   
   useEffect(() => {
     if (ejecutarConsulta) {
       obtenerProductos(setProductos, setEjecutarConsulta);
     }
   },[ejecutarConsulta]);
-  
+
   return (
     <div>
       <Helmet>
-          <title>Administrador de Productos</title>
+          <title>{titulo}</title>
       </Helmet>
-      <HeaderPrivado Titulo = {'Administrador de Productos'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>
