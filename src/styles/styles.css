@@ -305,3 +305,56 @@ input[type='text'], input[type = 'number'], input[type='date'],select{
     padding-right : 3em;
     padding-left: 3em ;
 }
+
+.panelLog{
+
+text-align: center;
+margin-bottom: 1em;
+}
+
+.botonOut{
+    margin-right: 3em;
+    margin-left: 1.5em;
+    margin-top: 1em;
+}
+
+.botonIn{
+    margin-left: 1.5em;
+}
+
+.contenedorNavBar{
+    
+    display: flex;
+    justify-content:space-evenly;
+    border: 0.1em solid black; 
+    padding: 1em; 
+}
+
+.contenedorLogo{
+    display: flex;
+    justify-content:space-evenly;
+    border: 0.1em solid black; 
+}
+
+.tituloCuadernia{
+    font-size: 350%;
+}
+
+.contenedorTienda{
+    padding: 3em;
+}
+
+.botonIndice{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.CuadernoInicio{
+    width: 12em;
+    height: 16em;
+}
+
+.contenedorCuaderno{
+    display: flex;
+    justify-content:space-evenly;
+}
