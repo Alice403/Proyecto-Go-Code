@@ -1,20 +1,17 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
-// import FooterPrivado from 'components/FooterPrivado';
 import HeaderPrivado from 'components/HeaderPrivado';
 
-const PrivateRoute = ({ children }) => {
+const Privado = ({ children }) => {
   const { isAuthenticated, isLoading } = useAuth0();
 
-  // if (false) return <div>Cargando...</div>;
+  if (isLoading) return <div>Cargando...</div>;
 
   return isAuthenticated ? (
     <div className = 'contenedorLayoutPrivado'>
-      
-        <HeaderPrivado 
-        titulo = {'TITULODINAMICO'.toUpperCase()}/>
+      <HeaderPrivado titulo = {'TITULODINAMICO'.toUpperCase()}/>
       {children}
     </div>
   ) : (
@@ -27,4 +24,4 @@ const PrivateRoute = ({ children }) => {
   );
 };
 
-export default PrivateRoute;
+export default Privado;

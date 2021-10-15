@@ -1,11 +1,9 @@
 import 'styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Titulos from 'components/Titulos';
 
 //Importaciones de todos los layouts (bases de pagina)
-import Privado from 'layouts/Privado';
 import Publico from 'layouts/Publico';
-import PrivateRoute from 'components/PrivateRoute';
+import Privado from 'layouts/Privado';
 // import LayoutAut from 'layouts/LayoutAut';
 // import LayoutMenu from 'layouts/LayoutMenu';
 
@@ -46,7 +44,7 @@ function App() {
           </Route>
           <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
-            <PrivateRoute>
+            <Privado>
               <Switch>
                 <Route path = '/admin/productos/editar'>
                   <ModificarProducto/>
@@ -72,7 +70,7 @@ function App() {
                   <MenuInicio/>
                 </Route>
               </Switch>
-            </PrivateRoute>
+            </Privado>
           </Route>
         
           <Route path = {['/']}>
