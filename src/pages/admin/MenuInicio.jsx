@@ -2,8 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from 'images/logo_cuadernia.png';
 import {Helmet} from 'react-helmet';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const MenuInicio = () => {
+  const { logout } = useAuth0();
   return (
     <div>
       <Helmet>
@@ -37,7 +39,8 @@ const MenuInicio = () => {
         </div>
       </ul>
 
-      <div className="contenedorBotonSalir">
+      <div className="contenedorBotonesSalir">
+      <button className = "botonOut2" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</button>
       <Link to = '/'>
         <i className="fas fa-home fa-3x botonSalir">
 
