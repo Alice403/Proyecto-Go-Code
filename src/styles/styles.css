@@ -321,17 +321,28 @@ input[type='text'], input[type = 'number'], input[type='date'],select{
 .panelLog{
 
 text-align: center;
-margin-bottom: 1em;
+
+background-color: black;
 }
 
 .botonOut{
     margin-right: 3em;
     margin-left: 1.5em;
     margin-top: 1em;
+    border-radius: 0.5em;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
 }
 
 .botonIn{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
     margin-left: 1.5em;
+    border-radius: 0.5em;
 }
 
 .contenedorNavBar{
@@ -340,26 +351,29 @@ margin-bottom: 1em;
     justify-content:space-evenly;
     border: 0.1em solid black; 
     padding: 1em; 
+    background-color: black;
+    color:white;
+    font-weight: bold;
 }
 
 .contenedorLogoPrincipal{
     display: flex;
     justify-content:space-evenly;
-    border: 0.1em solid black; 
+    
 }
 
 .tituloCuadernia{
     font-size: 350%;
+    
 }
 
 .contenedorTienda{
     padding: 3em;
 }
 
-.botonIndice{
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
-}
+
+
+
 
 .CuadernoInicio{
     width: 12em;
@@ -369,4 +383,55 @@ margin-bottom: 1em;
 .contenedorCuaderno{
     display: flex;
     justify-content:space-evenly;
+    
+}
+
+.botonTipoCuaderno{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color: #a6caee;
+    border-radius: 0.5em;
+}
+
+.botonRayado{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#c0f525;
+    border-radius: 0.5em;
+}
+
+.botonPortada{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#f4491d;
+    border-radius: 0.5em;
+}
+
+.botonNumero{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#e2df2a;
+    border-radius: 0.5em; 
+}
+
+.botonPrecio{
+        margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#8935a1;
+    border-radius: 0.5em; 
 }
