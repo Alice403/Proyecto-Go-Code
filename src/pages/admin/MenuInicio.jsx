@@ -5,11 +5,12 @@ import {Helmet} from 'react-helmet';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const MenuInicio = () => {
+
   const cerrarSesion = () =>{
     logout({ returnTo: window.location.origin });
     localStorage.setItem('token', null);
-
   }
+  
   const { logout } = useAuth0();
   return (
     <div>
