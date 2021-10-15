@@ -47,7 +47,7 @@ const GestionUsuarios = () => {
             <div>
               <Link to = '/admin'>
               <input className = "boton" type= "button" 
-              value = "Salir de la Aplicación"/>
+              value = "Regresar al menú"/>
               </Link>
             </div>
             <div>
