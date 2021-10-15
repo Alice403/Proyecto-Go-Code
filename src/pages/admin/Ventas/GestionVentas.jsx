@@ -1,6 +1,6 @@
 import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { Helmet } from 'react-helmet';
 import {obtenerVentas} from 'utils/get';
 import { Dialog, Tooltip } from '@material-ui/core';
@@ -24,18 +24,8 @@ const GestionVentas = () => {
       <Helmet>
           <title>Gestionar Ventas</title>
       </Helmet>
-    <div>
-      <header>
-        <ul className = "encabezado">
-          <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
-          </li>
-          <li>
-            <div className = "tituloPagina">GESTIÓN DE VENTAS</div>
-          </li>
-        </ul>
-      </header>
-    </div>
+
+      <HeaderPrivado Titulo = {'Gestión de Ventas'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>

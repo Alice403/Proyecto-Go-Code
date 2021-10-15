@@ -1,6 +1,6 @@
 import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -62,16 +62,7 @@ const ModificarVenta = () => {
   }
   return (
     <div>
-      <header>
-        <ul className = "encabezado">
-          <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
-          </li>
-          <li>
-            <div className = "tituloPaginaFormulario">EDITAR VENTAS</div>
-          </li>
-        </ul>
-      </header>
+      <HeaderPrivado Titulo = {'Registrar Venta'.toUpperCase()}/>
 
       <div className = "contenedorFormulario">
         <form id = "formulario" ref={form} onSubmit={submitForm}> 

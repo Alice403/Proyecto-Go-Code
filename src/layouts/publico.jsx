@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Publico = () => {
+const Publico = ({children}) => {
   return (
-    <div>
-      
+    <div className = 'contenedorLayoutPublico'>
+      <main>{children}</main>
     </div>
-  )
-}
+  );
+};
 
 export default Publico

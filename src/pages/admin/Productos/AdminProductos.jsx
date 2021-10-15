@@ -2,11 +2,11 @@ import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {obtenerProductos} from 'utils/get';
-import Logo from 'images/logo_cuadernia.png';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import HeaderPrivado from 'components/HeaderPrivado';
 
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -18,25 +18,12 @@ const AdminProductos = () => {
     }
   },[ejecutarConsulta]);
   
-  
   return (
     <div>
       <Helmet>
           <title>Administrador de Productos</title>
       </Helmet>
-      
-      <div>
-    <header>
-      <ul className = "encabezado">
-        <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
-        </li>
-        <li>
-            <div className = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
-        </li>
-      </ul>
-    </header>
-    </div>
+      <HeaderPrivado Titulo = {'Administrador de Productos'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>
@@ -54,9 +41,7 @@ const AdminProductos = () => {
             setEjecutarConsulta={setEjecutarConsulta}/>
           </div>
         </li>
-
-
-            
+        
         <li>
           <div className = "contenedorBotonesSalir">
             <div>

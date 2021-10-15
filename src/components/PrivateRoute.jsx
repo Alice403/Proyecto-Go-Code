@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, isLoading } = useAuth0();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Cargando...</div>;
 
   return isAuthenticated ? (
-    <>{children}</>
+    <div className = 'contenedorLayoutPrivado'>
+      {children}
+    </div>
   ) : (
     <div>
-      <div>No estas autorizado para ver este sitio.</div>
+      <div>No estás autorizado para ver este sitio.</div>
       <Link to='/'>
-        <span>Llévame al home</span>
+        <button className = 'boton'>Llévame al home</button>
       </Link>
     </div>
   );

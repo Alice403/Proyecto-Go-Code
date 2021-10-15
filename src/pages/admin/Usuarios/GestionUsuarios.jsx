@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 import {nanoid} from 'nanoid';
 import axios from 'axios';
 import {obtenerUsuarios} from 'utils/get';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -23,18 +23,7 @@ const GestionUsuarios = () => {
       <Helmet>
           <title>Gestionar Usuarios</title>
       </Helmet>
-      <div>
-      <header>
-        <ul className="encabezado">
-          <li>
-          <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
-          </li>
-          <li>
-              <div className="tituloPagina">GESTIÓN DE USUARIOS</div>
-          </li>
-        </ul>
-      </header>
-    </div>
+      <HeaderPrivado Titulo = {'Gestión de Usuarios'.toUpperCase()}/>
 
       <ul className="cuerpo">
         <li>

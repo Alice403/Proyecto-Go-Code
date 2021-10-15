@@ -1,4 +1,8 @@
 /* Características generales de la página (layouts) */
+.oculto{
+    display:none;
+}
+
 body{
     margin: 0px;
     background-color: rgb(190, 245, 227);
@@ -14,9 +18,17 @@ button,input{
     font-family: 'Raleway';
 }
 
-.oculto{
-    display:none;
+.contenedorLayoutPrivado{
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
+/* .contenedorLayoutPrivado > main{
+    height:100%;
+    overflow-y:scroll;
+
+} */
 
 /* Características de los módulos administrativos */
 /*Header*/
@@ -330,7 +342,7 @@ margin-bottom: 1em;
     padding: 1em; 
 }
 
-.contenedorLogo{
+.contenedorLogoPrincipal{
     display: flex;
     justify-content:space-evenly;
     border: 0.1em solid black; 

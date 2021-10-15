@@ -35,7 +35,7 @@ const Indice = () => {
             </section>
 
             <section>
-              <div className="contenedorLogo">
+              <div className="contenedorLogoPrincipal">
                 <div className="contenedorTienda">
                   <ul>
                     <li><h1>TIENDA</h1></li>

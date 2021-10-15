@@ -1,14 +1,13 @@
 import React from 'react';
-import PrivateRoute from 'components/PrivateRoute';
+// import FooterPrivado from 'components/FooterPrivado';
+// import HeaderPrivado from 'components/HeaderPrivado';
 
-const privado = ({ children }) => {
+const Privado = ({children}) => {
   return (
-    <PrivateRoute>
-      <main>
-            {children}
-      </main>
-    </PrivateRoute>
+    <div className = 'contenedorLayoutPrivado'>
+        <main>{children}</main>
+    </div>
   );
 };
 
-export default privado;
+export default Privado;
