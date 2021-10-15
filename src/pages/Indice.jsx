@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from 'images/logo_cuadernia.png';
 import Cuadernia from 'images/AzulClaro.png';
-import Cuaderno from 'images/Inicio.jpg';
+import Cuaderno from 'images/inicio.jpg';
 import Cuaderno2 from 'images/inicio2.jpg';
 import Cuaderno3 from 'images/inicio3.jpg';
 import { useAuth0 } from "@auth0/auth0-react";
