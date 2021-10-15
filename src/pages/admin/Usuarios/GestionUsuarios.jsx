@@ -14,7 +14,8 @@ const GestionUsuarios = () => {
 
   useEffect(() => {
     if (ejecutarConsulta) {
-      obtenerUsuarios(setUsuarios, setEjecutarConsulta);
+      obtenerUsuarios(setUsuarios);
+      setEjecutarConsulta(false);
     }
   },[ejecutarConsulta]);
 

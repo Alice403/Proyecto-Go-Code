@@ -1,7 +1,6 @@
-// CONSULTAS GET DE LA BASE DE DATOS
 import axios from 'axios';
 
-export const obtenerProductos = async (setProductos, setEjecutarConsulta = () => {}) => {
+export const obtenerProductos = async (setProductos) => {
   const options = { method: 'GET', url: 'http://localhost:5000/productos' };
   await axios
     .request(options)
@@ -11,10 +10,10 @@ export const obtenerProductos = async (setProductos, setEjecutarConsulta = () =>
     .catch(function (error) {
       console.error(error);
     });
-  setEjecutarConsulta(false);
+  
 };
 
-export const obtenerVentas = async (setVentas, setEjecutarConsulta = () => {}) => {
+export const obtenerVentas = async (setVentas) => {
   const options = { method: 'GET', url: 'http://localhost:5000/ventas/' };
   await axios
     .request(options)
@@ -24,10 +23,9 @@ export const obtenerVentas = async (setVentas, setEjecutarConsulta = () => {}) =
     .catch(function (error) {
       console.error(error);
     });
-  setEjecutarConsulta(false);
 };
 
-export const obtenerUsuarios = async (setUsuarios, setEjecutarConsulta = () => {}) => {
+export const obtenerUsuarios = async (setUsuarios) => {
   const options = { method: 'GET', url: 'http://localhost:5000/usuarios/' };
   await axios
     .request(options)
@@ -37,6 +35,5 @@ export const obtenerUsuarios = async (setUsuarios, setEjecutarConsulta = () => {
     .catch(function (error) {
       console.error(error);
     });
-  setEjecutarConsulta(false);
 };
 

@@ -14,7 +14,8 @@ const AdminProductos = () => {
   
   useEffect(() => {
     if (ejecutarConsulta) {
-      obtenerProductos(setProductos, setEjecutarConsulta);
+      obtenerProductos(setProductos);
+      setEjecutarConsulta(false);
     }
   },[ejecutarConsulta]);
   

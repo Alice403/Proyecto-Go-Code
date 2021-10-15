@@ -15,7 +15,8 @@ const GestionVentas = () => {
 
   useEffect(() => {
     if (ejecutarConsulta) {
-      obtenerVentas(setVentas, setEjecutarConsulta);
+      obtenerVentas(setVentas);
+      setEjecutarConsulta(false);
     }
   },[ejecutarConsulta]);
 
