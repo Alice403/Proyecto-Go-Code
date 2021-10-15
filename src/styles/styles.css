@@ -336,6 +336,15 @@ background-color: black;
     padding: 0.7em;
 }
 
+.botonOut2{
+
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+
 .botonIn{
     background-color: #92DBCD;
     border-color: #54b3a0;

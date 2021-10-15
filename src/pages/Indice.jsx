@@ -18,8 +18,8 @@ const Indice = () => {
             <section className="panelLog">
 
             <i  className="fas fa-shopping-cart"></i>
-            <button className = "botonIn"onClick= {() => loginWithRedirect()}>Log In</button>
-            <button className = "botonOut" onClick={() => logout({ returnTo: window.location.origin })}>Log Out</button>
+            <button className = "botonIn"onClick= {() => loginWithRedirect()}>Iniciar sesión</button>
+            <button className = "botonOut" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</button>
 
             </section>
 
