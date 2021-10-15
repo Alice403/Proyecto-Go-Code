@@ -7,11 +7,17 @@ import Cuaderno3 from 'images/inicio3.jpg';
 import { useAuth0 } from "@auth0/auth0-react";
 
 <title>Cuadernia</title>
-
+ 
   
 const Indice = () => {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
+
+  const cerrarSesion = () =>{
+    logout({ returnTo: window.location.origin });
+    localStorage.setItem('token', null);
+  }
+  
   return (
     <div className = 'cuerpoIndice'>
          
@@ -19,7 +25,7 @@ const Indice = () => {
 
             <i  className="fas fa-shopping-cart"></i>
             <button className = "botonIn"onClick= {() => loginWithRedirect()}>Iniciar sesión</button>
-            <button className = "botonOut" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</button>
+            <button className = "botonOut" onClick={() => cerrarSesion()}>Cerrar sesión</button>
 
             </section>
 

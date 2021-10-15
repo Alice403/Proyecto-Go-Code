@@ -5,6 +5,11 @@ import {Helmet} from 'react-helmet';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const MenuInicio = () => {
+  const cerrarSesion = () =>{
+    logout({ returnTo: window.location.origin });
+    localStorage.setItem('token', null);
+
+  }
   const { logout } = useAuth0();
   return (
     <div>
@@ -40,7 +45,7 @@ const MenuInicio = () => {
       </ul>
 
       <div className="contenedorBotonesSalir">
-      <button className = "botonOut2" onClick={() => logout({ returnTo: window.location.origin })}>Cerrar sesión</button>
+      <button className = "botonOut2" onClick={() =>cerrarSesion()}>Cerrar sesión</button>
       <Link to = '/'>
         <i className="fas fa-home fa-3x botonSalir">
 
