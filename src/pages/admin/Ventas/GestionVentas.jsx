@@ -8,6 +8,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const GestionVentas = () => {
   const [ventas, setVentas] = useState([]);
@@ -154,7 +157,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/ventas/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { ...infoNuevaVenta},
     };
     
@@ -176,7 +179,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/ventas/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { id: venta._id },
     };
 

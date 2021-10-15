@@ -8,6 +8,10 @@ import HeaderPrivado from 'components/HeaderPrivado';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 const GestionUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
@@ -139,7 +143,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/usuarios/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { ...infoNuevoUsuario},
     };
     
@@ -161,7 +165,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/usuarios/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { id: usuario._id },
     };
 

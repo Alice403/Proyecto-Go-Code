@@ -5,6 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 const RegistrarUsuario = () => {
   const form = useRef(null);
   const [borrarDatos, setBorrarDatos] = useState(false)
@@ -32,7 +36,7 @@ const RegistrarUsuario = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/usuarios/registro',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',Authorization: getToken() },
       data: {
         nombre: nuevoUsuario.nombre, 
         apellidos: nuevoUsuario.apellidos, 

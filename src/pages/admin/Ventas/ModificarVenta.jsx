@@ -5,6 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 const ModificarVenta = () => {
   const form = useRef(null);
   const [borrarDatos, setBorrarDatos] = useState(false)
@@ -36,7 +40,7 @@ const ModificarVenta = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/ventas/nueva/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: {
         cantidad: nuevaVenta.cantidad, 
         valor_unitario: nuevaVenta.valor_unitario, 

@@ -26,6 +26,7 @@ function App() {
   domain = 'go-code.us.auth0.com'
   clientId='hDmKjJ6hxt8cer7N0tYl6vMN02ZJ8ord'
   redirectUri= 'http://localhost:3000/admin'
+  audience= 'api-autenticacion-cuadernia'
   >
 
     <div className='App'>

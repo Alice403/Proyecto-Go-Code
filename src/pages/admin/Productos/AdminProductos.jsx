@@ -8,6 +8,10 @@ import { nanoid } from 'nanoid';
 import axios from 'axios';
 import HeaderPrivado from 'components/HeaderPrivado';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
@@ -141,7 +145,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/productos/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()}, 
       data: { ...infoNuevoProducto},
     };
     
@@ -163,7 +167,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/productos/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',Authorization: getToken()},
       data: { id: producto._id },
     };
 

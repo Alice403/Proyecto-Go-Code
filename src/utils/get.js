@@ -1,8 +1,13 @@
 // CONSULTAS GET DE LA BASE DE DATOS
 import axios from 'axios';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 export const obtenerProductos = async (setProductos, setEjecutarConsulta = () => {}) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/productos' };
+  const options = { method: 'GET', url: 'http://localhost:5000/productos' , headers: { Authorization: getToken()
+  }};
   await axios
     .request(options)
     .then(function (response) {
@@ -15,7 +20,8 @@ export const obtenerProductos = async (setProductos, setEjecutarConsulta = () =>
 };
 
 export const obtenerVentas = async (setVentas, setEjecutarConsulta = () => {}) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/ventas/' };
+  const options = { method: 'GET', url: 'http://localhost:5000/ventas/' ,headers: { Authorization: getToken()
+}};
   await axios
     .request(options)
     .then(function (response) {
@@ -28,7 +34,8 @@ export const obtenerVentas = async (setVentas, setEjecutarConsulta = () => {}) =
 };
 
 export const obtenerUsuarios = async (setUsuarios, setEjecutarConsulta = () => {}) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/' };
+  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/' ,headers: { Authorization: getToken()
+}};
   await axios
     .request(options)
     .then(function (response) {
