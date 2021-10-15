@@ -21,9 +21,9 @@ const GestionUsuarios = () => {
   return (
     <div>
       <Helmet>
-          <title>Gestionar Usuarios</title>
+          <title>Administrar Usuarios</title>
       </Helmet>
-      <HeaderPrivado Titulo = {'Gestión de Usuarios'.toUpperCase()}/>
+      <HeaderPrivado titulo = {'Gestión de Usuarios'.toUpperCase()}/>
 
       <ul className="cuerpo">
         <li>

@@ -13,7 +13,7 @@ const Indice = () => {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   return (
-    <div>
+    <div className = 'cuerpoIndice'>
          
             <section className="panelLog">
 

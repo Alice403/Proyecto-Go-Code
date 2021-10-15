@@ -62,7 +62,7 @@ const ModificarVenta = () => {
   }
   return (
     <div>
-      <HeaderPrivado Titulo = {'Registrar Venta'.toUpperCase()}/>
+      <HeaderPrivado titulo = {'Registrar Venta'.toUpperCase()}/>
 
       <div className = "contenedorFormulario">
         <form id = "formulario" ref={form} onSubmit={submitForm}> 

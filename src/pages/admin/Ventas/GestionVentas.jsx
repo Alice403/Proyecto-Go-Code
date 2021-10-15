@@ -22,10 +22,9 @@ const GestionVentas = () => {
   return (
     <div>
       <Helmet>
-          <title>Gestionar Ventas</title>
+          <title>Administar Ventas</title>
       </Helmet>
-
-      <HeaderPrivado Titulo = {'Gestión de Ventas'.toUpperCase()}/>
+      <HeaderPrivado titulo = {'Gestión de Ventas'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>

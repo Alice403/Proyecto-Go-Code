@@ -55,7 +55,7 @@ const RegistrarUsuario = () => {
 
   return (
     <div>
-      <HeaderPrivado Titulo = {'Registro de Usuario'.toUpperCase()}/>
+      <HeaderPrivado titulo = {'Registrar Usuario'.toUpperCase()}/>
 
       <div className = "contenedorFormulario">
         <form id = "formulario" ref={form} onSubmit={submitForm}> 

@@ -8,6 +8,10 @@ body{
     background-color: rgb(190, 245, 227);
   }
 
+.cuerpoIndice{
+    background-color: rgb(226, 221, 221);
+}
+
 ul{
     padding: 0px;
     margin: 10px;
