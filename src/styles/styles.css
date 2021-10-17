@@ -5,11 +5,24 @@
 
 body{
     margin: 0px;
-    background-color: rgb(190, 245, 227);
+    background-color: #bef5e3;
   }
 
 .cuerpoIndice{
-    background-color: rgb(226, 221, 221);
+    background-color: #e2dddd;
+}
+
+.paginaCarga{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.textoCarga{
+    font-size: 1.5em;
 }
 
 ul{
