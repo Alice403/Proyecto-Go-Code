@@ -1,16 +1,30 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
+import { obtenerDatosUsuarios } from 'utils/get';
 
 const Privado = ({ children }) => {
   const {isAuthenticated, isLoading, getAccessTokenSilently} = useAuth0();
   
   useEffect(()=> {
     const fetchAuth0Token = async () => {
+      // 1. Pedir token a auth0
       const accessToken = await getAccessTokenSilently({
         audience :'api-autenticacion-cuadernia',
       });
+      // 2. Recibir token the auth0
       localStorage.setItem('token',accessToken);
+      // 3. Enviarle token al backend
+      /*Cambio realizado 16 OCT 21*/ 
+      console.log(accessToken);
+      await obtenerDatosUsuarios(
+        (response)=>{
+        console.log('response', response);
+        },
+        (err)=>{
+          console.log("err",err);
+        }
+      );
     };
     if (isAuthenticated) {
       fetchAuth0Token();
