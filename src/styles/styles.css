@@ -10,6 +10,7 @@ body{
 
 .cuerpoIndice{
     background-color: #e2dddd;
+    font-family: 'Raleway';
 }
 
 .paginaCarga{
@@ -390,15 +391,17 @@ background-color: black;
 
 .tituloCuadernia{
     font-size: 350%;
-    
 }
 
 .contenedorTienda{
     padding: 3em;
+    text-align: center;
 }
 
-
-
+.textoIntermedio{
+    margin-top: 0;
+    margin-left: 16.34em;
+}
 
 
 .CuadernoInicio{
@@ -409,7 +412,15 @@ background-color: black;
 .contenedorCuaderno{
     display: flex;
     justify-content:space-evenly;
-    
+}
+
+.barraOpciones{
+    width: 15em;
+}
+
+.botonCuaderno{
+    width: 12em;
+    text-align: center;
 }
 
 .botonTipoCuaderno{
@@ -420,12 +431,13 @@ background-color: black;
     font-size: larger;
     background-color: #a6caee;
     border-radius: 0.5em;
+    
 }
 
 .botonRayado{
     margin-top: 0.7em;
     margin-bottom: 0.7em;
-    padding-top: 00.3em;
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
     font-size: larger;
     background-color:#c0f525;
@@ -435,7 +447,7 @@ background-color: black;
 .botonPortada{
     margin-top: 0.7em;
     margin-bottom: 0.7em;
-    padding-top: 00.3em;
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
     font-size: larger;
     background-color:#f4491d;
@@ -445,7 +457,7 @@ background-color: black;
 .botonNumero{
     margin-top: 0.7em;
     margin-bottom: 0.7em;
-    padding-top: 00.3em;
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
     font-size: larger;
     background-color:#e2df2a;
@@ -455,7 +467,7 @@ background-color: black;
 .botonPrecio{
         margin-top: 0.7em;
     margin-bottom: 0.7em;
-    padding-top: 00.3em;
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
     font-size: larger;
     background-color:#8935a1;
