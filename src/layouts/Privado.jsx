@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import { obtenerDatosUsuarios } from 'utils/get';
-=======
 import ReactLoading from 'react-loading';
 import { useAuth0 } from '@auth0/auth0-react';
->>>>>>> 1d40a2d1e4b9c29c1278c0a5496a561ae971f293
 
 const Privado = ({ children }) => {
   const {isAuthenticated, isLoading, getAccessTokenSilently} = useAuth0();
