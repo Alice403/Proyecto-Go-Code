@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { obtenerDatosUsuarios } from 'utils/get';
+=======
+import ReactLoading from 'react-loading';
+import { useAuth0 } from '@auth0/auth0-react';
+>>>>>>> 1d40a2d1e4b9c29c1278c0a5496a561ae971f293
 
 const Privado = ({ children }) => {
   const {isAuthenticated, isLoading, getAccessTokenSilently} = useAuth0();
@@ -32,7 +36,11 @@ const Privado = ({ children }) => {
   },[isAuthenticated,getAccessTokenSilently]);
 
 
-  if (isLoading) return <div>Cargando...</div>;
+  if (isLoading) return(
+  <div className = 'paginaCarga'>
+    <ReactLoading type={'spin'} color={'#2a8674'} height={150} width={150} />
+    <div className= 'textoCarga'>Cargando...</div>
+  </div>);
 
   return isAuthenticated ? (
     <div className = 'contenedorLayoutPrivado'>
