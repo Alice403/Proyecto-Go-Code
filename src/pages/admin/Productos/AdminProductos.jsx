@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
 import HeaderPrivado from 'components/HeaderPrivado';
+import PrivateComponent from 'components/PrivateComponent';
+
 
 const getToken = ()=>{
   return `Bearer ${localStorage.getItem('token')} `; 
@@ -31,12 +33,14 @@ const AdminProductos = () => {
 
       <ul className = "cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/productos/editar'>
               <input className = "botonAgregar boton" type= "button" 
               value = "Agregar Producto" />
             </Link>
           </div>
+          </PrivateComponent>
         </li>
         
         <li>
@@ -91,7 +95,10 @@ const Tabla = ({ listaProductos, setEjecutarConsulta }) => {
             <th scope="col">Descripción del producto</th>
             <th scope="col">Valor unitario</th>
             <th scope="col">¿Disponible?</th>
+            <PrivateComponent roleList = {["Administrador","Vendedor"]}>
             <th scope="col">Edición</th>
+            </PrivateComponent>
+
           </thead>
 
      
@@ -230,6 +237,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
 
         </>
       )}
+    <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -284,6 +292,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+    </PrivateComponent>
     </tr>
   );
 };

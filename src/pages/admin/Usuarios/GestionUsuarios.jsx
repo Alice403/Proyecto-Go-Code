@@ -7,6 +7,8 @@ import {obtenerUsuarios} from 'utils/get';
 import HeaderPrivado from 'components/HeaderPrivado';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
+import PrivateComponent from 'components/PrivateComponent';
+
 
 const getToken = ()=>{
   return `Bearer ${localStorage.getItem('token')} `; 
@@ -29,15 +31,19 @@ const GestionUsuarios = () => {
       </Helmet>
       <HeaderPrivado titulo = {'Gestión de Usuarios'.toUpperCase()}/>
 
+      
       <ul className="cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/usuarios/editar'>
             <input className = "botonAgregar boton" type= "button" 
             value = "Agregar Usuario" />
             </Link> 
           </div>
+          </PrivateComponent>
         </li>
+      
 
         <li>
           <div className= "contenedorTabla">
@@ -91,7 +97,9 @@ const Tabla = ({ listaUsuarios, setEjecutarConsulta }) => {
             <th scope="col">Apellidos</th>
             <th scope="col">Tipo de usuario</th>
             <th scope="col">Estado del usuario</th>
+            <PrivateComponent roleList = {["Administrador","Vendedor"]}>
             <th scope="col">Edición</th>
+            </PrivateComponent>
           </thead>
           <tbody>
             {usuariosFiltrados.map((usuario) => {
@@ -215,6 +223,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
                 }>
               <option value = "Vendedor">Vendedor</option>
               <option value = "Administrador">Administrador</option>
+              <option value = "Inactivo">Inactivo</option>
             </select>
           </td>
           <td>
@@ -239,6 +248,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           <td>{usuario.estado_usuario}</td>
         </>
       )}
+      <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -293,6 +303,8 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+      </PrivateComponent>
+      
     </tr>
   );
 };

@@ -8,6 +8,7 @@ import Privado from 'layouts/Privado';
 // import LayoutMenu from 'layouts/LayoutMenu';
 
 //Importaciones de las páginas
+import React, { useState, useEffect } from 'react';
 import Indice from 'pages/Indice';
 import Autenticacion from 'pages/auth/Autenticacion';
 import Registro from 'pages/auth/Registro';
@@ -19,8 +20,10 @@ import ModificarVenta from 'pages/admin/Ventas/ModificarVenta';
 import GestionUsuarios from 'pages/admin/Usuarios/GestionUsuarios';
 import RegistrarUsuario from 'pages/admin/Usuarios/RegistrarUsuario';
 import {Auth0Provider} from '@auth0/auth0-react';
+import { UserContext } from 'context/userContext';
 
 function App() {
+  const [userData, setUserData] = useState({});
   return (
   <Auth0Provider
   domain = 'go-code.us.auth0.com'
@@ -30,6 +33,7 @@ function App() {
   >
 
     <div className='App'>
+      <UserContext.Provider value = {{userData,setUserData}}>
       <Router>
         <Switch> 
           <Route path = {['/autenticacion', '/registro']}>
@@ -86,6 +90,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </UserContext.Provider>
     </div>
   </Auth0Provider>
   );

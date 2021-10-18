@@ -7,6 +7,7 @@ import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import PrivateComponent from 'components/PrivateComponent';
 
 const getToken = ()=>{
   return `Bearer ${localStorage.getItem('token')} `; 
@@ -31,12 +32,14 @@ const GestionVentas = () => {
 
       <ul className = "cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/ventas/editar'>
               <input className = "botonAgregar boton" type= "button" 
               value = "Agregar Venta" />
             </Link>
           </div>
+        </PrivateComponent>
         </li>
         
         <li>
@@ -96,7 +99,9 @@ const Tabla = ({listaVentas,setEjecutarConsulta}) => {
                 <th>Nombre del cliente</th>
                 <th>Vendedor</th>
                 <th>Estado de la venta</th>
+                <PrivateComponent roleList = {["Administrador","Vendedor"]}>
                 <th>Edición</th>
+                </PrivateComponent>
             </thead>
             <tbody>
             {ventasFiltradas.map((venta) => {
@@ -303,6 +308,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
           <td>{venta.estado_venta}</td>
         </>
       )}
+      <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -357,6 +363,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+      </PrivateComponent>
     </tr>
   );
 };

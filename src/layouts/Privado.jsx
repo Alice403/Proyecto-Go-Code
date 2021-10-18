@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { obtenerDatosUsuarios } from 'utils/get';
 import ReactLoading from 'react-loading';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useUser } from 'context/userContext';
 
 const Privado = ({ children }) => {
   const {isAuthenticated, isLoading, getAccessTokenSilently} = useAuth0();
+  const { setUserData } = useUser();
   
   useEffect(()=> {
     const fetchAuth0Token = async () => {
@@ -21,6 +23,7 @@ const Privado = ({ children }) => {
       await obtenerDatosUsuarios(
         (response)=>{
         console.log('response', response);
+        setUserData(response.tipo_usuario);
         },
         (err)=>{
           console.log("err",err);
