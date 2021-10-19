@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 export const obtenerProductos = async (setProductos) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/productos', headers};
+  const options = { method: 'GET', url: 'http://localhost:5000/productos', 
+  headers: { Authorization: getToken() } // Enviarle el token al backend 
+};
 const getToken = ()=>{
   return `Bearer ${localStorage.getItem('token')} `; 
 }
@@ -19,7 +21,9 @@ const getToken = ()=>{
 };
 
 export const obtenerVentas = async (setVentas) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/ventas/',headers};
+  const options = { method: 'GET', url: 'http://localhost:5000/ventas/',headers:
+   { Authorization: getToken() } // Enviarle el token al backend
+  };
   await axios
     .request(options)
     .then(function (response) {
@@ -31,7 +35,9 @@ export const obtenerVentas = async (setVentas) => {
 };
 
 export const obtenerUsuarios = async (setUsuarios) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/',headers };
+  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/',
+  headers: { Authorization: getToken() } // Enviarle el token al backend
+};
   await axios
     .request(options)
     .then(function (response) {
@@ -43,9 +49,11 @@ export const obtenerUsuarios = async (setUsuarios) => {
 };
 
 /*Cambio realizado 16 OCT 21*/ 
-export const obtenerDatosUsuarios = async (setUsuarios, setEjecutarConsulta = () => {}) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/self' ,headers: { Authorization: getToken() // 3. Enviarle el token al backend 
-}};
+export const obtenerDatosUsuarios = async (setUsuarios, setEjecutarConsulta = () => {}) => 
+{
+  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/self' ,
+  headers: { Authorization: getToken() }// Enviarle el token al backend 
+};
   await axios
     .request(options)
     .then(function (response) {

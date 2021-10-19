@@ -8,4 +8,4 @@ const Publico = ({children}) => {
   );
 };
 
-export default Publico
+export default Publico;
