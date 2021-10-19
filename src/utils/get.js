@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const obtenerProductos = async (setProductos) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/productos' };
+  const options = { method: 'GET', url: 'http://localhost:5000/productos', headers};
 const getToken = ()=>{
   return `Bearer ${localStorage.getItem('token')} `; 
 }
@@ -19,7 +19,7 @@ const getToken = ()=>{
 };
 
 export const obtenerVentas = async (setVentas) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/ventas/' };
+  const options = { method: 'GET', url: 'http://localhost:5000/ventas/',headers};
   await axios
     .request(options)
     .then(function (response) {
@@ -31,7 +31,7 @@ export const obtenerVentas = async (setVentas) => {
 };
 
 export const obtenerUsuarios = async (setUsuarios) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/' };
+  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/',headers };
   await axios
     .request(options)
     .then(function (response) {
