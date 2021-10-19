@@ -2,11 +2,17 @@ import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {obtenerProductos} from 'utils/get';
-import Logo from 'images/logo_cuadernia.png';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import HeaderPrivado from 'components/HeaderPrivado';
+import PrivateComponent from 'components/PrivateComponent';
+
+
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const AdminProductos = () => {
   const [productos, setProductos] = useState([]);
@@ -18,35 +24,24 @@ const AdminProductos = () => {
       setEjecutarConsulta(false);
     }
   },[ejecutarConsulta]);
-  
-  
+
   return (
     <div>
       <Helmet>
-          <title>Administrador de Productos</title>
+          <title>Administrar Productos</title>
       </Helmet>
-      
-      <div>
-    <header>
-      <ul className = "encabezado">
-        <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
-        </li>
-        <li>
-            <div className = "tituloPagina">ADMINISTRADOR DE PRODUCTOS</div>
-        </li>
-      </ul>
-    </header>
-    </div>
+      <HeaderPrivado titulo = {'Administrador de Productos'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/productos/editar'>
               <input className = "botonAgregar boton" type= "button" 
               value = "Agregar Producto" />
             </Link>
           </div>
+          </PrivateComponent>
         </li>
         
         <li>
@@ -55,15 +50,13 @@ const AdminProductos = () => {
             setEjecutarConsulta={setEjecutarConsulta}/>
           </div>
         </li>
-
-
-            
+        
         <li>
           <div className = "contenedorBotonesSalir">
             <div>
               <Link to = '/admin'>
               <input className = "boton" type= "button" 
-              value = "Salir de la Aplicación"/>
+              value = "Regresar al menú"/>
               </Link>
             </div>
             <div>
@@ -103,7 +96,10 @@ const Tabla = ({ listaProductos, setEjecutarConsulta }) => {
             <th scope="col">Descripción del producto</th>
             <th scope="col">Valor unitario</th>
             <th scope="col">¿Disponible?</th>
+            <PrivateComponent roleList = {["Administrador","Vendedor"]}>
             <th scope="col">Edición</th>
+            </PrivateComponent>
+
           </thead>
 
      
@@ -157,7 +153,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/productos/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()}, 
       data: { ...infoNuevoProducto},
     };
     
@@ -179,7 +175,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/productos/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',Authorization: getToken()},
       data: { id: producto._id },
     };
 
@@ -242,6 +238,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
 
         </>
       )}
+    <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -296,6 +293,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+    </PrivateComponent>
     </tr>
   );
 };

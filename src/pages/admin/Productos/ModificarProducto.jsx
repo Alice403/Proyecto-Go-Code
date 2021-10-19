@@ -1,9 +1,13 @@
 import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const ModificarProducto = () => {
   const form = useRef(null);
@@ -31,7 +35,7 @@ const ModificarProducto = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/productos/nuevo/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',Authorization: getToken() },
       data: {
         descripcion_producto: nuevoProducto.descripcion_producto, 
         valor_unitario: nuevoProducto.valor_unitario, 
@@ -53,16 +57,7 @@ const ModificarProducto = () => {
 
   return (
     <div>
-      <header>
-        <ul className = "encabezado">
-          <li>
-              <img className = "logoCuadernia" src= {Logo} alt="Logo Cuadernia"/>
-          </li>
-          <li>
-              <div className = "tituloPaginaFormulario">EDITAR PRODUCTOS</div>
-          </li>
-        </ul>
-      </header>
+      <HeaderPrivado titulo = {'Registrar Producto'.toUpperCase()}/>
 
       <div className = "contenedorFormulario">
         <form id = "formulario" ref = {form} onSubmit={submitForm}> 

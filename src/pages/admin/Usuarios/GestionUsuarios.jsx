@@ -4,9 +4,15 @@ import {Helmet} from 'react-helmet';
 import {nanoid} from 'nanoid';
 import axios from 'axios';
 import {obtenerUsuarios} from 'utils/get';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
+import PrivateComponent from 'components/PrivateComponent';
+
+
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const GestionUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -22,30 +28,23 @@ const GestionUsuarios = () => {
   return (
     <div>
       <Helmet>
-          <title>Gestionar Usuarios</title>
+          <title>Administrar Usuarios</title>
       </Helmet>
-      <div>
-      <header>
-        <ul className="encabezado">
-          <li>
-          <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
-          </li>
-          <li>
-              <div className="tituloPagina">GESTIÓN DE USUARIOS</div>
-          </li>
-        </ul>
-      </header>
-    </div>
+      <HeaderPrivado titulo = {'Gestión de Usuarios'.toUpperCase()}/>
 
+      
       <ul className="cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/usuarios/editar'>
             <input className = "botonAgregar boton" type= "button" 
             value = "Agregar Usuario" />
             </Link> 
           </div>
+          </PrivateComponent>
         </li>
+      
 
         <li>
           <div className= "contenedorTabla">
@@ -59,7 +58,7 @@ const GestionUsuarios = () => {
             <div>
               <Link to = '/admin'>
               <input className = "boton" type= "button" 
-              value = "Salir de la Aplicación"/>
+              value = "Regresar al menú"/>
               </Link>
             </div>
             <div>
@@ -99,7 +98,9 @@ const Tabla = ({ listaUsuarios, setEjecutarConsulta }) => {
             <th scope="col">Apellidos</th>
             <th scope="col">Tipo de usuario</th>
             <th scope="col">Estado del usuario</th>
+            <PrivateComponent roleList = {["Administrador","Vendedor"]}>
             <th scope="col">Edición</th>
+            </PrivateComponent>
           </thead>
           <tbody>
             {usuariosFiltrados.map((usuario) => {
@@ -151,7 +152,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/usuarios/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { ...infoNuevoUsuario},
     };
     
@@ -173,7 +174,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/usuarios/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { id: usuario._id },
     };
 
@@ -223,6 +224,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
                 }>
               <option value = "Vendedor">Vendedor</option>
               <option value = "Administrador">Administrador</option>
+              <option value = "Inactivo">Inactivo</option>
             </select>
           </td>
           <td>
@@ -247,6 +249,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           <td>{usuario.estado_usuario}</td>
         </>
       )}
+      <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -301,6 +304,8 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+      </PrivateComponent>
+      
     </tr>
   );
 };

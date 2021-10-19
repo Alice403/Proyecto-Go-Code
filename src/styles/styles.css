@@ -1,8 +1,30 @@
 /* Características generales de la página (layouts) */
+.oculto{
+    display:none;
+}
+
 body{
     margin: 0px;
-    background-color: rgb(190, 245, 227);
+    background-color: #bef5e3;
   }
+
+.cuerpoIndice{
+    background-color: #e2dddd;
+    font-family: 'Raleway';
+}
+
+.paginaCarga{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.textoCarga{
+    font-size: 1.5em;
+}
 
 ul{
     padding: 0px;
@@ -14,9 +36,17 @@ button,input{
     font-family: 'Raleway';
 }
 
-.oculto{
-    display:none;
+.contenedorLayoutPrivado{
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
+/* .contenedorLayoutPrivado > main{
+    height:100%;
+    overflow-y:scroll;
+
+} */
 
 /* Características de los módulos administrativos */
 /*Header*/
@@ -304,4 +334,142 @@ input[type='text'], input[type = 'number'], input[type='date'],select{
     margin-bottom: 3em;
     padding-right : 3em;
     padding-left: 3em ;
+}
+
+.panelLog{
+
+text-align: center;
+
+background-color: black;
+}
+
+.botonOut{
+    margin-right: 3em;
+    margin-left: 1.5em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+.botonOut2{
+
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+}
+
+
+.botonIn{
+    background-color: #92DBCD;
+    border-color: #54b3a0;
+    font-size: 1.1em;
+    padding: 0.7em;
+    margin-left: 1.5em;
+    border-radius: 0.5em;
+}
+
+.contenedorNavBar{
+    
+    display: flex;
+    justify-content:space-evenly;
+    border: 0.1em solid black; 
+    padding: 1em; 
+    background-color: black;
+    color:white;
+    font-weight: bold;
+}
+
+.contenedorLogoPrincipal{
+    display: flex;
+    justify-content:space-evenly;
+    
+}
+
+.tituloCuadernia{
+    font-size: 350%;
+}
+
+.contenedorTienda{
+    padding: 3em;
+    text-align: center;
+}
+
+.textoIntermedio{
+    margin-top: 0;
+    margin-left: 16.34em;
+}
+
+
+.CuadernoInicio{
+    width: 12em;
+    height: 16em;
+}
+
+.contenedorCuaderno{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.barraOpciones{
+    width: 15em;
+}
+
+.botonCuaderno{
+    width: 12em;
+    text-align: center;
+}
+
+.botonTipoCuaderno{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 00.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color: #a6caee;
+    border-radius: 0.5em;
+    
+}
+
+.botonRayado{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#c0f525;
+    border-radius: 0.5em;
+}
+
+.botonPortada{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#f4491d;
+    border-radius: 0.5em;
+}
+
+.botonNumero{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#e2df2a;
+    border-radius: 0.5em; 
+}
+
+.botonPrecio{
+        margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: larger;
+    background-color:#8935a1;
+    border-radius: 0.5em; 
 }

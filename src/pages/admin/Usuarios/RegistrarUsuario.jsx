@@ -1,9 +1,13 @@
 import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const RegistrarUsuario = () => {
   const form = useRef(null);
@@ -32,7 +36,7 @@ const RegistrarUsuario = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/usuarios/registro',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',Authorization: getToken() },
       data: {
         nombre: nuevoUsuario.nombre, 
         apellidos: nuevoUsuario.apellidos, 
@@ -55,66 +59,57 @@ const RegistrarUsuario = () => {
 
   return (
     <div>
-      <header>
-        <ul className ="encabezado">
-            <li>
-              <img className = "logoCuadernia" src= {Logo} alt="Logo Cuadernia"/>
-            </li>
-            <li>
-                <div className="tituloPaginaFormulario">REGISTRO DE USUARIO</div>
-            </li>
-        </ul>
-      </header>
+      <HeaderPrivado titulo = {'Registrar Usuario'.toUpperCase()}/>
 
-        <div className = "contenedorFormulario">
-          <form id = "formulario" ref={form} onSubmit={submitForm}> 
-            <ul className = "listaFormulario">
+      <div className = "contenedorFormulario">
+        <form id = "formulario" ref={form} onSubmit={submitForm}> 
+          <ul className = "listaFormulario">
 
         {/* <li></li> ELEMENTO PARA AGREGAR LAS ID (INMUTABLE) */}
 
-              <li>
-                <label>Nombres</label>
-                <div className = "contenedorDeDatos">
-                  <input name = "nombre"
-                  type = "text" className = "dato" id = "nombre_id" required/>
-                </div>
-              </li>
-        
-              <li>
-                <label>Apellidos</label>
-                <div className = "contenedorDeDatos">
-                  <input name = "apellidos"
-                   type = "text" className = "dato" id = "apellido_id" required/>
-                </div>
-              </li>
-        
-              <li>
-                <label> Tipo de usuario</label>
-                <div className = "contenedorDeDatos">
-                    <select name="tipo_usuario" 
-                    id="tipo" required>
-                      <option disabled value= '' selected>Seleccione una opción</option>
-                      <option value = "Vendedor">Vendedor</option>
-                      <option value = "Administrador">Administrador</option>
-                    </select>
-                </div>
-              </li>
+            <li>
+              <label>Nombres</label>
+              <div className = "contenedorDeDatos">
+                <input name = "nombre"
+                type = "text" className = "dato" id = "nombre_id" required/>
+              </div>
+            </li>
+      
+            <li>
+              <label>Apellidos</label>
+              <div className = "contenedorDeDatos">
+                <input name = "apellidos"
+                  type = "text" className = "dato" id = "apellido_id" required/>
+              </div>
+            </li>
+      
+            <li>
+              <label> Tipo de usuario</label>
+              <div className = "contenedorDeDatos">
+                  <select name="tipo_usuario" 
+                  id="tipo" required>
+                    <option disabled value= '' selected>Seleccione una opción</option>
+                    <option value = "Vendedor">Vendedor</option>
+                    <option value = "Administrador">Administrador</option>
+                  </select>
+              </div>
+            </li>
 
-              <li>
-                <label> Estado del usuario</label>
-                <div className = "contenedorDeDatos">
-                    <select name="estado_usuario" 
-                    id="estado" required>
-                      <option disabled value= '' selected>Seleccione una opción</option>
-                      <option value = "Autorizado">Autorizado</option>
-                      <option value = "No autorizado">No autorizado</option>
-                      <option value = "Pendiente">Pendiente</option>
-                    </select>
-                </div>
-              </li>
-            </ul>
-          </form>
-        </div>
+            <li>
+              <label> Estado del usuario</label>
+              <div className = "contenedorDeDatos">
+                  <select name="estado_usuario" 
+                  id="estado" required>
+                    <option disabled value= '' selected>Seleccione una opción</option>
+                    <option value = "Autorizado">Autorizado</option>
+                    <option value = "No autorizado">No autorizado</option>
+                    <option value = "Pendiente">Pendiente</option>
+                  </select>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
 
       <div className = "contenedorBotonesGuardar">
         <div>

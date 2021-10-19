@@ -1,13 +1,17 @@
 import {React, useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { Helmet } from 'react-helmet';
 import {obtenerVentas} from 'utils/get';
 import { Dialog, Tooltip } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import PrivateComponent from 'components/PrivateComponent';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const GestionVentas = () => {
   const [ventas, setVentas] = useState([]);
@@ -23,29 +27,20 @@ const GestionVentas = () => {
   return (
     <div>
       <Helmet>
-          <title>Gestionar Ventas</title>
+          <title>Administar Ventas</title>
       </Helmet>
-    <div>
-      <header>
-        <ul className = "encabezado">
-          <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"></img>
-          </li>
-          <li>
-            <div className = "tituloPagina">GESTIÓN DE VENTAS</div>
-          </li>
-        </ul>
-      </header>
-    </div>
+      <HeaderPrivado titulo = {'Gestión de Ventas'.toUpperCase()}/>
 
       <ul className = "cuerpo">
         <li>
+        <PrivateComponent roleList = {["Administrador","Vendedor"]}>
           <div className = "contenedorBotonAgregar">
             <Link to = '/admin/ventas/editar'>
               <input className = "botonAgregar boton" type= "button" 
               value = "Agregar Venta" />
             </Link>
           </div>
+        </PrivateComponent>
         </li>
         
         <li>
@@ -60,7 +55,7 @@ const GestionVentas = () => {
             <div>
               <Link to = '/admin'>
               <input className = "boton" type= "button" 
-              value = "Salir de la Aplicación"/>
+              value = "Regresar al menú"/>
               </Link>
             </div>
             <div>
@@ -105,7 +100,9 @@ const Tabla = ({listaVentas,setEjecutarConsulta}) => {
                 <th>Nombre del cliente</th>
                 <th>Vendedor</th>
                 <th>Estado de la venta</th>
+                <PrivateComponent roleList = {["Administrador","Vendedor"]}>
                 <th>Edición</th>
+                </PrivateComponent>
             </thead>
             <tbody>
             {ventasFiltradas.map((venta) => {
@@ -166,7 +163,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/ventas/editar/', 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { ...infoNuevaVenta},
     };
     
@@ -188,7 +185,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/ventas/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { id: venta._id },
     };
 
@@ -312,6 +309,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
           <td>{venta.estado_venta}</td>
         </>
       )}
+      <PrivateComponent roleList = {["Administrador","Vendedor"]}>
       <td>
       <div className='contenedorEdicion'>
         {edit ? (
@@ -366,6 +364,7 @@ const Fila = ({ venta, setEjecutarConsulta }) => {
           </div>
         </Dialog>
       </td>
+      </PrivateComponent>
     </tr>
   );
 };

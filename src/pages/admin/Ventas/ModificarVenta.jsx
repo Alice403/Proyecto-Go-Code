@@ -1,9 +1,13 @@
 import {React, useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from 'images/logo_cuadernia.png';
+import HeaderPrivado from 'components/HeaderPrivado';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
 
 const ModificarVenta = () => {
   const form = useRef(null);
@@ -36,7 +40,7 @@ const ModificarVenta = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/ventas/nueva/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: {
         cantidad: nuevaVenta.cantidad, 
         valor_unitario: nuevaVenta.valor_unitario, 
@@ -62,16 +66,7 @@ const ModificarVenta = () => {
   }
   return (
     <div>
-      <header>
-        <ul className = "encabezado">
-          <li>
-            <img className = "logoCuadernia" src = {Logo} alt="Logo Cuadernia"/>
-          </li>
-          <li>
-            <div className = "tituloPaginaFormulario">EDITAR VENTAS</div>
-          </li>
-        </ul>
-      </header>
+      <HeaderPrivado titulo = {'Registrar Venta'.toUpperCase()}/>
 
       <div className = "contenedorFormulario">
         <form id = "formulario" ref={form} onSubmit={submitForm}> 
