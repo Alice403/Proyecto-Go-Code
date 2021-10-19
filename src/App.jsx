@@ -8,7 +8,7 @@ import Privado from 'layouts/Privado';
 // import LayoutMenu from 'layouts/LayoutMenu';
 
 //Importaciones de las páginas
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import Indice from 'pages/Indice';
 import Autenticacion from 'pages/auth/Autenticacion';
 import Registro from 'pages/auth/Registro';
