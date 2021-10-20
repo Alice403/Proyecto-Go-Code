@@ -35,7 +35,7 @@ const RegistrarUsuario = () => {
   
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/usuarios/registro',
+      url: 'https://hidden-cliffs-11953.herokuapp.com/usuarios/registro',
       headers: { 'Content-Type': 'application/json',Authorization: getToken() },
       data: {
         nombre: nuevoUsuario.nombre, 

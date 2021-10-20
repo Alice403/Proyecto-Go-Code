@@ -152,7 +152,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
   const actualizarProducto = async () => {
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:5000/productos/editar/', 
+      url: 'https://hidden-cliffs-11953.herokuapp.com/productos/editar/', 
       headers: { 'Content-Type': 'application/json', Authorization: getToken()}, 
       data: { ...infoNuevoProducto},
     };
@@ -174,7 +174,7 @@ const Fila = ({ producto, setEjecutarConsulta }) => {
   const eliminarProducto = async () => {
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/productos/eliminar/',
+      url: 'https://hidden-cliffs-11953.herokuapp.com/productos/eliminar/',
       headers: { 'Content-Type': 'application/json',Authorization: getToken()},
       data: { id: producto._id },
     };

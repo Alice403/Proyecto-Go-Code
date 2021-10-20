@@ -39,7 +39,7 @@ const ModificarVenta = () => {
   
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/ventas/nueva/',
+      url: 'https://hidden-cliffs-11953.herokuapp.com/ventas/nueva/',
       headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: {
         cantidad: nuevaVenta.cantidad, 

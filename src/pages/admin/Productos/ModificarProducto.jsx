@@ -34,7 +34,7 @@ const ModificarProducto = () => {
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/productos/nuevo/',
+      url: 'https://hidden-cliffs-11953.herokuapp.com/productos/nuevo/',
       headers: { 'Content-Type': 'application/json',Authorization: getToken() },
       data: {
         descripcion_producto: nuevoProducto.descripcion_producto, 

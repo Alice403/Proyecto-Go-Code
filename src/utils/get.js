@@ -5,7 +5,7 @@ const getToken = ()=>{
 }
 
 export const obtenerProductos = async (setProductos) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/productos', 
+  const options = { method: 'GET', url: 'https://hidden-cliffs-11953.herokuapp.com/productos/', 
   headers: { Authorization: getToken() } // Enviarle el token al backend 
 };
 
@@ -23,7 +23,7 @@ export const obtenerProductos = async (setProductos) => {
 };
 
 export const obtenerVentas = async (setVentas) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/ventas/',headers:
+  const options = { method: 'GET', url: 'https://hidden-cliffs-11953.herokuapp.com/ventas/',headers:
    { Authorization: getToken() } // Enviarle el token al backend
   };
   await axios
@@ -37,7 +37,7 @@ export const obtenerVentas = async (setVentas) => {
 };
 
 export const obtenerUsuarios = async (setUsuarios) => {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/',
+  const options = { method: 'GET', url: 'https://hidden-cliffs-11953.herokuapp.com/usuarios/',
   headers: { Authorization: getToken() } // Enviarle el token al backend
 };
   await axios
@@ -53,7 +53,7 @@ export const obtenerUsuarios = async (setUsuarios) => {
 /*Cambio realizado 16 OCT 21*/ 
 export const obtenerDatosUsuarios = async (setUsuarios, setEjecutarConsulta = () => {}) => 
 {
-  const options = { method: 'GET', url: 'http://localhost:5000/usuarios/self' ,
+  const options = { method: 'GET', url: 'https://hidden-cliffs-11953.herokuapp.com/usuarios/self/' ,
   headers: { Authorization: getToken() }// Enviarle el token al backend 
 };
   await axios

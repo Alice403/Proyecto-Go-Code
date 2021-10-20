@@ -151,7 +151,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
   const actualizarUsuario = async () => {
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:5000/usuarios/editar/', 
+      url: 'https://hidden-cliffs-11953.herokuapp.com/usuarios/editar/', 
       headers: { 'Content-Type': 'application/json', Authorization: getToken()},
       data: { ...infoNuevoUsuario},
     };
@@ -173,7 +173,7 @@ const Fila = ({ usuario, setEjecutarConsulta }) => {
   const eliminarUsuario = async () => {
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/usuarios/eliminar/',
+      url: 'https://hidden-cliffs-11953.herokuapp.com/usuarios/eliminar/',
       headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { id: usuario._id },
     };
