@@ -35,7 +35,6 @@ function App() {
       <Router>
         <Switch> 
           <Route path = {['/autenticacion', '/registro']}>
-            {/* <LayoutAut> */}
               <Switch>
                 <Route path = '/autenticacion'>
                   <Autenticacion/>
@@ -44,7 +43,6 @@ function App() {
                   <Registro/>
                 </Route>
               </Switch>
-            {/* </LayoutAut> */}
           </Route>
           <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>

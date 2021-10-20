@@ -23,7 +23,7 @@ const Autenticacion = () => {
             <section className="login__container--social-media">
                 <div><img src = {logo_google} alt="Logo google"></img><a href="inicio.html">Inicia sesión con Google</a></div>
             </section>
-            <p className="login__container--register">¿No tienes ninguna cuenta? <a href="./registro.html">Regístrate</a></p>
+            <p className="login__container--register">¿No tienes ninguna cuenta? <a href="inicio.html">Regístrate</a></p>
         </section>
     </section>
   </div>
