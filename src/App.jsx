@@ -76,13 +76,11 @@ function App() {
           </Route>
         
           <Route path = {['/']}>
-            {/* <Publico> */}
               <Switch>
                 <Route path = '/'>
                   <Indice/>
                 </Route>
               </Switch>
-            {/* </Publico> */}
           </Route>
         </Switch>
       </Router>

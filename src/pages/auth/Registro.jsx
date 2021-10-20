@@ -20,7 +20,7 @@ const Registro = () => {
                 <button class="button" onclick="msg1();">Regístrate</button>
             </form>
             <section class="login__container--social-media">
-                <div><img src = {logo_google} alt="Logo google"></img><a href="inicio.html">Regístrate con Google</a></div>
+                <div><img src = {logo_google} alt="Logo google"></img>Regístrate con Google</div>
             </section>
             <p class="login__container--register">¿Ya tienes cuenta? <a href="inicio.html">Inicia sesión</a></p>
       </section>
