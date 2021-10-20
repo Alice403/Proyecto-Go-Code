@@ -33,7 +33,7 @@ const Privado = ({ children }) => {
     if (isAuthenticated) {
       fetchAuth0Token();
     }
-  },[isAuthenticated,getAccessTokenSilently]);
+  },[isAuthenticated,getAccessTokenSilently, setUserData]);
 
 
   if (isLoading) return(
