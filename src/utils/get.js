@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+const getToken = ()=>{
+  return `Bearer ${localStorage.getItem('token')} `; 
+}
+
 export const obtenerProductos = async (setProductos) => {
   const options = { method: 'GET', url: 'http://localhost:5000/productos', 
   headers: { Authorization: getToken() } // Enviarle el token al backend 
 };
-const getToken = ()=>{
-  return `Bearer ${localStorage.getItem('token')} `; 
-}
+
 
 /*Linea donde hubo un conflicto*/
   await axios

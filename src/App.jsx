@@ -2,7 +2,7 @@ import 'styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Importaciones de todos los layouts (bases de pagina)
-import Publico from 'layouts/Publico';
+//import Publico from 'layouts/Publico';
 import Privado from 'layouts/Privado';
 // import LayoutAut from 'layouts/LayoutAut';
 // import LayoutMenu from 'layouts/LayoutMenu';
@@ -80,13 +80,13 @@ function App() {
           </Route>
         
           <Route path = {['/']}>
-            <Publico>
+            {/* <Publico> */}
               <Switch>
                 <Route path = '/'>
                   <Indice/>
                 </Route>
               </Switch>
-            </Publico>
+            {/* </Publico> */}
           </Route>
         </Switch>
       </Router>
