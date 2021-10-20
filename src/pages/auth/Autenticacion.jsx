@@ -17,13 +17,13 @@ const Autenticacion = () => {
                 <input className="input" type="password" id="UserPassword"/>
                 <button className="button" onclick="msg();">Ingresar</button>
                 <div className="login__container--remember">
-                    <a href="#"> ¿Olvidó su contraseña? </a>
+                    <a href="inicio.html"> ¿Olvidó su contraseña? </a>
                 </div>
             </form>
             <section className="login__container--social-media">
-                <div><img src = {logo_google} alt="Logo google"></img><a href="#">Inicia sesión con Google</a></div>
+                <div><img src = {logo_google} alt="Logo google"></img><a href="inicio.html">Inicia sesión con Google</a></div>
             </section>
-            <p className="login__container--register">¿No tienes ninguna cuenta? <a href="./registro.html">Regístrate</a></p>
+            <p className="login__container--register">¿No tienes ninguna cuenta? <a href="inicio.html">Regístrate</a></p>
         </section>
     </section>
   </div>

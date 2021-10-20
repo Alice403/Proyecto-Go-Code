@@ -26,6 +26,20 @@ body{
     font-size: 1.5em;
 }
 
+.noAutorizado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.tituloNoAutorizado{
+    font-size: 1.5em;
+    margin-bottom:0.5em;
+}
+
 ul{
     padding: 0px;
     margin: 10px;
@@ -337,10 +351,11 @@ input[type='text'], input[type = 'number'], input[type='date'],select{
 }
 
 .panelLog{
-
-text-align: center;
-
-background-color: black;
+    text-align: center;
+    background-color: black;
+    position: fixed;
+    overflow-y: hidden;
+    width: 100%;
 }
 
 .botonOut{
@@ -362,7 +377,6 @@ background-color: black;
     padding: 0.7em;
 }
 
-
 .botonIn{
     background-color: #92DBCD;
     border-color: #54b3a0;
@@ -373,14 +387,14 @@ background-color: black;
 }
 
 .contenedorNavBar{
-    
     display: flex;
     justify-content:space-evenly;
     border: 0.1em solid black; 
     padding: 1em; 
-    background-color: black;
     color:white;
     font-weight: bold;
+    padding-left: 10em;
+    padding-right: 10em;
 }
 
 .contenedorLogoPrincipal{
@@ -392,6 +406,11 @@ background-color: black;
 .tituloCuadernia{
     font-size: 350%;
 }
+
+.cuerpoInicio{
+    padding-top: 8em;
+}
+
 
 .contenedorTienda{
     padding: 3em;

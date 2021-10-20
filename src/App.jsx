@@ -4,11 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //Importaciones de todos los layouts (bases de pagina)
 //import Publico from 'layouts/Publico';
 import Privado from 'layouts/Privado';
-// import LayoutAut from 'layouts/LayoutAut';
-// import LayoutMenu from 'layouts/LayoutMenu';
 
 //Importaciones de las páginas
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import Indice from 'pages/Indice';
 import Autenticacion from 'pages/auth/Autenticacion';
 import Registro from 'pages/auth/Registro';
@@ -37,7 +35,6 @@ function App() {
       <Router>
         <Switch> 
           <Route path = {['/autenticacion', '/registro']}>
-            {/* <LayoutAut> */}
               <Switch>
                 <Route path = '/autenticacion'>
                   <Autenticacion/>
@@ -46,7 +43,6 @@ function App() {
                   <Registro/>
                 </Route>
               </Switch>
-            {/* </LayoutAut> */}
           </Route>
           <Route path = {['/admin/productos', '/admin/productos/editar', '/admin',
             '/admin/ventas', '/admin/ventas/editar','admin/usuarios','admin/usuarios/editar']}>
@@ -80,13 +76,11 @@ function App() {
           </Route>
         
           <Route path = {['/']}>
-            {/* <Publico> */}
               <Switch>
                 <Route path = '/'>
                   <Indice/>
                 </Route>
               </Switch>
-            {/* </Publico> */}
           </Route>
         </Switch>
       </Router>

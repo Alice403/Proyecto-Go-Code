@@ -33,7 +33,7 @@ const Privado = ({ children }) => {
     if (isAuthenticated) {
       fetchAuth0Token();
     }
-  },[isAuthenticated,getAccessTokenSilently]);
+  },[isAuthenticated,getAccessTokenSilently, setUserData]);
 
 
   if (isLoading) return(
@@ -47,10 +47,10 @@ const Privado = ({ children }) => {
       {children}
     </div>
   ) : (
-    <div>
-      <div>No estás autorizado para ver este sitio.</div>
+    <div className = 'noAutorizado'>
+      <div className = 'tituloNoAutorizado'>No estás autorizado para ver este sitio.</div>
       <Link to='/'>
-        <button className = 'boton'>Llévame al home</button>
+        <button className = 'boton'>Llévame al inicio</button>
       </Link>
     </div>
   );
